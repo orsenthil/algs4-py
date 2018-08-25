@@ -1,5 +1,7 @@
 import re
 import locale
+import urllib.request
+import urllib.parse
 
 
 class In:
@@ -33,3 +35,13 @@ class In:
     EMPTY_PATTERN = re.compile("")
 
     EVERYTHING_PATTERN = re.compile(r"""\A  # Matches only at the start of the string.""", re.X)
+
+
+    def __init__(self, url=None):
+        fopen = urllib.request.urlopen(url)
+
+        try:
+            scanned =  urllib.reqest.urlopen(fopen).read()
+        except ValueError as e:
+            raise e
+
