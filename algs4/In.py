@@ -36,12 +36,21 @@ class In:
 
     EVERYTHING_PATTERN = re.compile(r"""\A  # Matches only at the start of the string.""", re.X)
 
+    def __init__(self, fobj=None, url=None):
 
-    def __init__(self, url=None):
-        fopen = urllib.request.urlopen(url)
+        if fobj:
+            self.fopen = fobj
+            self.lines = self.fopen.readlines()
+            self.content = "".join(self.lines)
 
         try:
-            scanned =  urllib.reqest.urlopen(fopen).read()
+            self.fopen = urllib.request.urlopen(url)
         except ValueError as e:
             raise e
+        else:
+            self.lines= self.fopen.readlines()
+            self.content = "".join(self.lines)
 
+    def readline(self):
+        for line in self.lines:
+            yield line
