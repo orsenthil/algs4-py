@@ -52,5 +52,20 @@ class In:
             self.content = "".join(self.lines)
 
     def readline(self):
-        for line in self.lines:
-            yield line
+        """Reads and returns the next line in this input stream.
+
+        :return: the next line in this input stream; None if no such line
+        """
+        try:
+            for line in self.lines:
+                yield line
+        except StopIteration:
+            return None
+
+    def exists(self) -> bool:
+        """
+        Returns true if this input stream exists.
+
+        :return: True if the input stream exists, false otherwise.
+        """
+        return self.fopen is not None
