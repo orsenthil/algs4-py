@@ -69,3 +69,14 @@ class In:
         :return: True if the input stream exists, false otherwise.
         """
         return self.fopen is not None
+
+    def readChar(self) -> int:
+        """Reads and returns the next character in this input stream.
+
+        :return: the next in this input stream, throws ValueError if the input stream is empty.
+        """
+        try:
+            for _char in self.content:
+                yield _char
+        except StopIteration:
+            raise ValueError("attempts to read a 'char' value from the input stream, but no more tokens are available")
