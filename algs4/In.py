@@ -80,3 +80,23 @@ class In:
                 yield _char
         except StopIteration:
             raise ValueError("attempts to read a 'char' value from the input stream, but no more tokens are available")
+
+    def readAll(self) -> str:
+        """
+        Reads and returns the remainder of this input stream, as a string.
+
+        :return:
+        """
+        result = self.fopen.read()
+        return result
+
+
+    def readString(self) -> str:
+        """Reads the next token from this input stream and returns it as a String.
+
+        :return: str
+        """
+        try:
+            yield self.readline()
+        except StopIteration:
+            raise ValueError("attempts to read a 'String' value from the input stream, but no more tokens are available")
