@@ -4,6 +4,14 @@ import urllib.request
 import urllib.parse
 
 
+class InputMismatchException(Exception):
+    pass
+
+
+class NoSuchElementException(Exception):
+    pass
+
+
 class In:
     """
     Input. This class provides methods for reading strings and numbers from standard input, file input, URLs, and
@@ -29,7 +37,7 @@ class In:
 
     LOCALE = locale.LC_ALL
 
-    WHITESPACE_PATTERN = re.compile(r"""\s  # matches white-space characters
+    WHITESPACE_PATTERN = re.compile(r"""\s+  # matches white-space characters
                                      """, re.X | re.UNICODE)
 
     EMPTY_PATTERN = re.compile("")
@@ -42,6 +50,7 @@ class In:
             self.fopen = fobj
             self.lines = self.fopen.readlines()
             self.content = "".join(self.lines)
+            self.scanned_contents = re.split(self.WHITESPACE_PATTERN, self.content)
 
         try:
             self.fopen = urllib.request.urlopen(url)
@@ -50,6 +59,7 @@ class In:
         else:
             self.lines= self.fopen.readlines()
             self.content = "".join(self.lines)
+            self.scanned_contents = re.split(self.WHITESPACE_PATTERN, self.content)
 
     def readline(self):
         """Reads and returns the next line in this input stream.
@@ -100,3 +110,25 @@ class In:
             yield self.readline()
         except StopIteration:
             raise ValueError("attempts to read a 'String' value from the input stream, but no more tokens are available")
+
+
+    def readInt(self) -> int:
+        """Reads the next token from this input stream, parses it as a int,
+        and returns the int.
+
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as an int
+        :return: the next int in this input stream
+        """
+
+        if not self.scanned_contents:
+            raise NoSuchElementException("attemps to read an 'int' value from the input stream, "
+                                         + "but no more tokens are available")
+
+        for token in self.scanned_contents:
+            try:
+                yield int(token)
+            except ValueError:
+                raise InputMismatchException("attempts to read an 'int' value from the input stream, "
+                                             + "but the next token is \"" + token + "\"")
+
