@@ -111,7 +111,6 @@ class In:
         except StopIteration:
             raise ValueError("attempts to read a 'String' value from the input stream, but no more tokens are available")
 
-
     def readInt(self) -> int:
         """Reads the next token from this input stream, parses it as a int,
         and returns the int.
@@ -132,3 +131,36 @@ class In:
                 raise InputMismatchException("attempts to read an 'int' value from the input stream, "
                                              + "but the next token is \"" + token + "\"")
 
+
+
+    def readDouble(self) -> float:
+        """Reads the next token from this input stream, parses it as a float,
+        and returns the float.
+
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as an int
+        :return: the next int in this input stream
+        """
+
+        if not self.scanned_contents:
+            raise NoSuchElementException("attemps to read an 'float' value from the input stream, "
+                                         + "but no more tokens are available")
+
+        for token in self.scanned_contents:
+            try:
+                yield float(token)
+            except ValueError:
+                raise InputMismatchException("attempts to read an 'int' value from the input stream, "
+                                             + "but the next token is \"" + token + "\"")
+
+
+
+    def readFloat(self) -> float:
+        """Reads the next token from this input stream, parses it as a float,
+        and returns the float.
+
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as an int
+        :return: the next int in this input stream
+        """
+        return self.readDouble()
