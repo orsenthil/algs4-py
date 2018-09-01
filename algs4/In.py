@@ -132,7 +132,6 @@ class In:
                                              + "but the next token is \"" + token + "\"")
 
 
-
     def readDouble(self) -> float:
         """Reads the next token from this input stream, parses it as a float,
         and returns the float.
@@ -154,13 +153,24 @@ class In:
                                              + "but the next token is \"" + token + "\"")
 
 
-
     def readFloat(self) -> float:
         """Reads the next token from this input stream, parses it as a float,
         and returns the float.
 
         @throws NoSuchElementException if the input stream is empty
-        @throws InputMismatchException if the next token cannot be parsed as an int
-        :return: the next int in this input stream
+        @throws InputMismatchException if the next token cannot be parsed as an float
+        :return: the next float in this input stream
         """
         return self.readDouble()
+
+
+    def readLong(self) -> int:
+        """Reads the next token from this input stream, parses it as a long,
+        and returns the long.
+
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as an long
+        :return: the next long in this input stream
+        """
+
+        return self.readInt()
