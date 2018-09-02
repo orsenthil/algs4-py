@@ -174,3 +174,15 @@ class In:
         """
 
         return self.readInt()
+
+
+    def readShort(self) -> int:
+        """Reads the next token from this input stream, parses it as a {@code short},
+        and returns the {@code short}.
+        @return the next {@code short} in this input stream
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as a {@code short}
+        :return:  the next short in this input stream.
+        """
+        return self.readInt()
+
