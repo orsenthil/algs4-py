@@ -31,7 +31,7 @@ class In:
     """
 
     # assume Unicode UTF-8 encoding
-    CHARSET_NAME = "UTF-8"
+    CHARSET_NAME = "utf-8"
 
     # language = English, country = US for consistency with System.out
 
@@ -186,3 +186,24 @@ class In:
         """
         return self.readInt()
 
+
+    def readByte(self) -> bytes:
+        """Reads the next token from this input stream, parses it as a {@code byte}, and returns the {@code byte}.
+        <p>
+        To read binary data, use {@link BinaryIn}.
+
+        @return the next {@code byte} in this input stream
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as a {@code byte}
+        :return:
+        """
+        if not self.scanned_contents:
+            raise NoSuchElementException("attemps to read an 'byte' value from the input stream, "
+                                         + "but no more tokens are available")
+
+        for token in self.scanned_contents:
+            try:
+                yield bytes(token, encoding=self.CHARSET_NAME)
+            except ValueError:
+                raise InputMismatchException("attempts to read an 'byte' value from the input stream, "
+                                             + "but the next token is \"" + token + "\"")
