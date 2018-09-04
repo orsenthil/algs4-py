@@ -207,3 +207,13 @@ class In:
             except ValueError:
                 raise InputMismatchException("attempts to read an 'byte' value from the input stream, "
                                              + "but the next token is \"" + token + "\"")
+
+
+    def readAllLines(self) -> str:
+        """
+        Reads and returns all the lines of hte input.
+
+        :return: List of Lines.
+        """
+
+        return self.lines
