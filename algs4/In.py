@@ -209,6 +209,14 @@ class In:
                                              + "but the next token is \"" + token + "\"")
 
 
+    def readAllStrings(self) -> list:
+        """Reads all remaining tokens from this input stream and returns them as an array of strings.
+
+        :return: all remaining tokens in this input stream, as an array of strings
+        """
+        return re.split(self.WHITESPACE_PATTERN, self.content)
+
+
     def readAllLines(self) -> str:
         """
         Reads and returns all the lines of hte input.
