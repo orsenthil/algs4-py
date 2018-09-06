@@ -2,6 +2,7 @@ import re
 import locale
 import urllib.request
 import urllib.parse
+from typing import Iterator
 
 
 class InputMismatchException(Exception):
@@ -225,3 +226,12 @@ class In:
         """
 
         return self.lines
+
+    def readAllInts(self) -> Iterator[int]:
+        """Reads all remaining tokens from this input stream, parses them as integers, and returns them as an
+        array of integers.
+
+        :return: all remaining lines in this input stream, as an array of integers
+        """
+        tokens = self.readAllStrings()
+        return list(map(int, tokens))
