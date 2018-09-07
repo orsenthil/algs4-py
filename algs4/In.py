@@ -217,7 +217,6 @@ class In:
         """
         return re.split(self.WHITESPACE_PATTERN, self.content)
 
-
     def readAllLines(self) -> str:
         """
         Reads and returns all the lines of hte input.
@@ -235,3 +234,12 @@ class In:
         """
         tokens = self.readAllStrings()
         return list(map(int, tokens))
+
+    def readAllLongs(self) -> Iterator[int]:
+        """Reads all remaining tokens from this input stream, parses them as longs, and returns them as an
+        array of longs.
+
+        :return: All remaining lines in this input stream, as an array of longs
+        """
+        return self.readAllInts()
+
