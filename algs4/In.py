@@ -153,7 +153,6 @@ class In:
                 raise InputMismatchException("attempts to read an 'int' value from the input stream, "
                                              + "but the next token is \"" + token + "\"")
 
-
     def readFloat(self) -> float:
         """Reads the next token from this input stream, parses it as a float,
         and returns the float.
@@ -163,7 +162,6 @@ class In:
         :return: the next float in this input stream
         """
         return self.readDouble()
-
 
     def readLong(self) -> int:
         """Reads the next token from this input stream, parses it as a long,
@@ -175,7 +173,6 @@ class In:
         """
 
         return self.readInt()
-
 
     def readShort(self) -> int:
         """Reads the next token from this input stream, parses it as a {@code short},
