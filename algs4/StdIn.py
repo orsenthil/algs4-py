@@ -23,43 +23,41 @@ readFloat()
 readByte()
 readBoolean()
 
-The first method returns true if standard input has more tokens. Each other method skips over any input that is whitespace. Then, it reads
-the next token and attempts to convert it into a value of the specified type. If it succeeds, it returns that value; otherwise, it
-throws an InputMismatchException.
+The first method returns true if standard input has more tokens. Each other method skips over any
+input that is whitespace. Then, it reads the next token and attempts to convert it into a value of the
+specified type. If it succeeds, it returns that value; otherwise, it throws an InputMismatchException.
 
 Whitespace includes spaces, tabs, and newlines; the full definition
 is inherited from Character.isWhitespace(char).
 
-A <em>token</em> is a maximal sequence of non-whitespace characters.
+A token is a maximal sequence of non-whitespace characters.
+
 The precise rules for describing which tokens can be converted to
 integers and floating-point numbers are inherited from
 
 <a href = "http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html#number-syntax">Scanner</a>,
 
-using the locale {@link Locale#US}; the rules
-for floating-point numbers are slightly different
-from those in {@link Double#valueOf(String)},
-but unlikely to be of concern to most programmers.
+using the locale Locale_US; the rules for floating-point numbers are slightly different
+from those in Double.valueOf(String), but unlikely to be of concern to most programmers.
 
 As an example, the following code fragment reads integers from standard input,
 one at a time, and prints them one per line.
 
-<pre>
-while (!StdIn.isEmpty()) {
-    double value = StdIn.readDouble();
-    StdOut.println(value);
-}
-StdOut.println(sum);
-</pre>
+::
+
+    while (!StdIn.isEmpty()) {
+        double value = StdIn.readDouble();
+        StdOut.println(value);
+    }
+    StdOut.println(sum);
 
 
-<p>
-<b>Reading characters from standard input.</b>
+Reading characters from standard input.
+
 You can use the following two methods to read characters from standard input one at a time:
 
-<li> {@link #hasNextChar()}
-<li> {@link #readChar()}
-</ul>
+#hasNextChar()
+#readChar()
 
 The first method returns true if standard input has more input (including whitespace).
 The second method reads and returns the next character of input on standard
@@ -76,84 +74,83 @@ while (StdIn.hasNextChar()) {
 Reading lines from standard input.
 You can use the following two methods to read lines from standard input:
 
-@link #hasNextLine()
-@link #readLine()
+#hasNextLine()
+#readLine()
 
 The first method returns true if standard input has more input (including whitespace).
 The second method reads and returns the remaining portion of
 the next line of input on standard input (possibly whitespace),
 discarding the trailing line separator.
 
-A <em>line separator</em> is defined to be one of the following strings:
+A line separator is defined to be one of the following strings:
 
-{@code \n} (Linux), {@code \r} (old Macintosh),
-{@code \r\n} (Windows),
-{@code \}{@code u2028}, {@code \}{@code u2029}, or {@code \}{@code u0085}.
+`\n` (Linux), `\r` (old Macintosh),
+`\r\n` (Windows),
+`\u2028`, `\u2029`, or `\u0085`.
 
 As an example, the following code fragment reads text from standard input,
 one line at a time, and prints it to standard output.
 
-<pre>
-while (StdIn.hasNextLine()) {
-    String line = StdIn.readLine();
-    StdOut.println(line);
-}
-</pre>
+::
+
+    while (StdIn.hasNextLine()) {
+        String line = StdIn.readLine();
+        StdOut.println(line);
+    }
 
 Reading a sequence of values of the same type from standard input.
+
 You can use the following methods to read a sequence numbers, strings,
 or booleans (all of the same type) from standard input:
 
-<li> {@link #readAllDoubles()}
-<li> {@link #readAllInts()}
-<li> {@link #readAllLongs()}
-<li> {@link #readAllStrings()}
-<li> {@link #readAllLines()}
-<li> {@link #readAll()}
+#readAllDoubles()
+#readAllInts()
+#readAllLongs()
+#readAllStrings()
+#readAllLines()
+#readAll()
 
 The first three methods read of all of remaining token on standard input
 and converts the tokens to values of
 the specified type, as in the corresponding
-{@code readDouble}, {@code readInt}, and {@code readString()} methods.
-The {@code readAllLines()} method reads all remaining lines on standard
+
+readDouble, readInt, and readString() methods.
+
+The readAllLines() method reads all remaining lines on standard
 input and returns them as an array of strings.
-The {@code readAll()} method reads all remaining input on standard
+
+The readAll() method reads all remaining input on standard
 input and returns it as a string.
 
 As an example, the following code fragment reads all of the remaining
 tokens from standard input and returns them as an array of strings.
 
-<pre>
+
 String[] words = StdIn.readAllStrings();
-</pre>
-<p>
 
-<b>Differences with Scanner.</b>
+Differences with Scanner.
 
-{@code StdIn} and {@link Scanner} are both designed to parse
+StdIn and Scanner are both designed to parse
 tokens and convert them to primitive types and strings.
 The main differences are summarized below:
 
-<ul>
-<li> {@code StdIn} is a set of static methods and reads
+{@code StdIn} is a set of static methods and reads
      reads input from only standard input. It is suitable for use before
      a programmer knows about objects.
      See {@link In} for an object-oriented version that handles
      input from files, URLs,
      and sockets.
-<li> {@code StdIn} uses whitespace as the delimiter pattern
+{@code StdIn} uses whitespace as the delimiter pattern
      that separates tokens.
      {@link Scanner} supports arbitrary delimiter patterns.
-<li> {@code StdIn} coerces the character-set encoding to UTF-8,
+{@code StdIn} coerces the character-set encoding to UTF-8,
      which is the most widely used character encoding for Unicode.
-<li> {@code StdIn} coerces the locale to {@link Locale#US},
+{@code StdIn} coerces the locale to {@link Locale#US},
      for consistency with {@link StdOut}, {@link Double#parseDouble(String)},
      and floating-point literals.
-<li> {@code StdIn} has convenient methods for reading a single
+{@code StdIn} has convenient methods for reading a single
      character; reading in sequences of integers, doubles, or strings;
      and reading in all of the remaining input.
-</ul>
-<p>
 
 Historical note: {@code StdIn} preceded {@code Scanner}; when
 {@code Scanner} was introduced, this class was re-implemented to use {@code Scanner}.
