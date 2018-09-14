@@ -134,46 +134,55 @@ StdIn and Scanner are both designed to parse
 tokens and convert them to primitive types and strings.
 The main differences are summarized below:
 
-{@code StdIn} is a set of static methods and reads
+StdIn is a set of static methods and reads
      reads input from only standard input. It is suitable for use before
      a programmer knows about objects.
-     See {@link In} for an object-oriented version that handles
+     See In for an object-oriented version that handles
      input from files, URLs,
      and sockets.
-{@code StdIn} uses whitespace as the delimiter pattern
+
+StdIn uses whitespace as the delimiter pattern
      that separates tokens.
-     {@link Scanner} supports arbitrary delimiter patterns.
-{@code StdIn} coerces the character-set encoding to UTF-8,
+     Scanner supports arbitrary delimiter patterns.
+
+StdIn coerces the character-set encoding to UTF-8,
      which is the most widely used character encoding for Unicode.
-{@code StdIn} coerces the locale to {@link Locale#US},
-     for consistency with {@link StdOut}, {@link Double#parseDouble(String)},
+
+StdIn coerces the locale to Locale#US,
+     for consistency with StdOut, Double#parseDouble(String),
      and floating-point literals.
-{@code StdIn} has convenient methods for reading a single
+
+StdIn has convenient methods for reading a single
      character; reading in sequences of integers, doubles, or strings;
      and reading in all of the remaining input.
 
-Historical note: {@code StdIn} preceded {@code Scanner}; when
-{@code Scanner} was introduced, this class was re-implemented to use {@code Scanner}.
-<p>
+Historical note: StdIn preceded Scanner; when
+Scanner was introduced, this class was re-implemented to use Scanner.
 
-<b>Using standard input.</b>
+Using standard input.
+
 Standard input is fundamental operating system abstraction, on Mac OS X,
 Windows, and Linux.
-The methods in {@code StdIn} are <em>blocking</em>, which means that they
+
+The methods in StdIn are <em>blocking</em>, which means that they
 will wait until you enter input on standard input.
+
 If your program has a loop that repeats until standard input is empty,
 you must signal that the input is finished.
+
 To do so, depending on your operating system and IDE,
-use either {@code <Ctrl-d>} or {@code <Ctrl-z>}, on its own line.
+use either <Ctrl-d> or <Ctrl-z>, on its own line.
+
 If you are redirecting standard input from a file, you will not need
 to do anything to signal that the input is finished.
-<p>
-<b>Known bugs.</b>
+
+Known bugs.
+
 Java's UTF-8 encoding does not recognize the optional
 <a href = "http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4508058">byte-order mask</a>.
 If the input begins with the optional byte-order mask, {@code StdIn}
-will have an extra character {@code \}{@code uFEFF} at the beginning.
-<p>
+will have an extra character \uFEFF at the beginning.
+
 
 """
 class StdIn:
