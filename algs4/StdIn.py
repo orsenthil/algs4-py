@@ -35,8 +35,6 @@ A token is a maximal sequence of non-whitespace characters.
 The precise rules for describing which tokens can be converted to
 integers and floating-point numbers are inherited from
 
-<a href = "http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html#number-syntax">Scanner</a>,
-
 using the locale Locale_US; the rules for floating-point numbers are slightly different
 from those in Double.valueOf(String), but unlikely to be of concern to most programmers.
 
@@ -185,6 +183,8 @@ will have an extra character \uFEFF at the beginning.
 
 
 """
+
+
 class StdIn:
 
     def __init__(self):
