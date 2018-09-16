@@ -1,10 +1,12 @@
 """
 The StdIn class provides static methods for reading strings and numbers from standard input.
+
 These functions fall into one of four categories:
 
 * Those for reading individual tokens from standard input, one at a time, and converting each to a number, string, or boolean
 * Those for reading characters from standard input, one at a time
 * Those for reading lines from standard input, one at a time
+
 * Those for reading a sequence of values of the same type from standard input, and returning the values in an array
 
 Generally, it is best not to mix functions from the different categories in the same program.
@@ -188,4 +190,8 @@ will have an extra character \uFEFF at the beginning.
 class StdIn:
 
     def __init__(self):
-        pass
+        self.scanner = None
+
+    @classmethod
+    def isEmpty(cls):
+        return len(cls.scanner) == 0
