@@ -186,12 +186,19 @@ will have an extra character \uFEFF at the beginning.
 
 """
 
+import re
+
 
 class StdIn:
 
-    def __init__(self):
-        self.scanner = None
+    def __init__(self, fobj=None):
+
+        if fobj:
+            self.fopen = fobj
+            self.lines = self.fopen.readlines()
+            self.content = "".join(self.lines)
+            self.scanned_contents = re.split(self.WHITESPACE_PATTERN, self.content)
 
     @classmethod
     def isEmpty(cls):
-        return len(cls.scanner) == 0
+        return len(cls.lines) == 0
