@@ -191,6 +191,9 @@ import re
 
 class StdIn:
 
+    WHITESPACE_PATTERN = re.compile(r"""\s+  # matches white-space characters
+                                     """, re.X | re.UNICODE)
+
     def __init__(self, fobj=None):
 
         if fobj:
@@ -199,6 +202,5 @@ class StdIn:
             self.content = "".join(self.lines)
             self.scanned_contents = re.split(self.WHITESPACE_PATTERN, self.content)
 
-    @classmethod
-    def isEmpty(cls):
-        return len(cls.lines) == 0
+    def isEmpty(self):
+        return len(self.lines) == 0
