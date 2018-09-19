@@ -204,3 +204,12 @@ class StdIn:
 
     def isEmpty(self):
         return len(self.lines) == 0
+
+    def hasNextLine(self):
+        """Returns true if standard input has a next line.
+        Use this method to know whether the next call to {@link #readLine()} will succeed. This method
+        is functionally equivalent to {@link #hasNextChar()}.
+
+        :return: if standard input has more input (including whitespace); , False, otherwise
+        """
+        return bool(self.lines)
