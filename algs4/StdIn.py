@@ -213,3 +213,8 @@ class StdIn:
         :return: if standard input has more input (including whitespace); , False, otherwise
         """
         return bool(self.lines)
+
+    def hasNextChar(self):
+        all_lines = " ".join(self.lines)
+        _chars = all_lines.split(" ")
+        return bool(_chars)
