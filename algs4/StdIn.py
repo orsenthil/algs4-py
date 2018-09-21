@@ -218,3 +218,14 @@ class StdIn:
         all_lines = " ".join(self.lines)
         _chars = all_lines.split(" ")
         return bool(_chars)
+
+    def readLine(self):
+        """Reads and returns the next line, excluding the line separator if present.
+
+        :return: @return the next line, excluding the line separator if present; {@code null} if no such line
+        """
+        try:
+            for line in self.lines:
+                yield line
+        except StopIteration:
+            return None
