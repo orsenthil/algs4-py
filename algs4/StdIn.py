@@ -229,3 +229,15 @@ class StdIn:
                 yield line
         except StopIteration:
             return None
+
+    def readChar(self):
+        """Reads and returns the next character.
+
+        :return: char if available, else None.
+        """
+        chars = list(" ".join(self.lines))
+        try:
+            for c in chars:
+                yield c
+        except StopIteration:
+            return None
