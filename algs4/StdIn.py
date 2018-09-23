@@ -241,3 +241,13 @@ class StdIn:
                 yield c
         except StopIteration:
             return None
+
+
+    def readAll(self):
+        """Reads and returns the remainder of the input, as a string.
+
+        :return: the remainder of the input, as a string
+        """
+        contents = " ".join(self.lines)
+        return contents
+
