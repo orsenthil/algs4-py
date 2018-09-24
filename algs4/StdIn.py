@@ -188,6 +188,8 @@ will have an extra character \uFEFF at the beginning.
 
 import re
 
+from In import NoSuchElementException
+
 
 class StdIn:
 
@@ -251,3 +253,13 @@ class StdIn:
         contents = " ".join(self.lines)
         return contents
 
+    def readString(self):
+        """Reads and returns the next String, excluding the line separator if present.
+
+        :return: @return the next line, or raise a NoSuchElementException if the next line is not present.
+        """
+        try:
+            for line in self.lines:
+                yield line
+        except StopIteration:
+            raise NoSuchElementException
