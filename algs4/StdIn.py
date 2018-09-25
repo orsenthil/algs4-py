@@ -188,7 +188,7 @@ will have an extra character \uFEFF at the beginning.
 
 import re
 
-from In import NoSuchElementException
+from In import NoSuchElementException, InputMismatchException
 
 
 class StdIn:
@@ -263,3 +263,26 @@ class StdIn:
                 yield line
         except StopIteration:
             raise NoSuchElementException
+
+
+    def readInt(self) -> int:
+        """Reads the next token from this input stream, parses it as a int,
+        and returns the int.
+
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as an int
+        :return: the next int in this input stream
+        """
+
+        contents = list(" ".join(self.lines))
+
+        if not contents:
+            raise NoSuchElementException("attemps to read an 'int' value from the input stream, "
+                                         + "but no more tokens are available")
+
+        for token in contents:
+            try:
+                yield int(token)
+            except ValueError:
+                raise InputMismatchException("attempts to read an 'int' value from the input stream, "
+                                             + "but the next token is \"" + token + "\"")
