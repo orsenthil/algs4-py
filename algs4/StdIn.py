@@ -286,3 +286,25 @@ class StdIn:
             except ValueError:
                 raise InputMismatchException("attempts to read an 'int' value from the input stream, "
                                              + "but the next token is \"" + token + "\"")
+
+    def readDouble(self) -> float:
+        """Reads the next token from this input stream, parses it as a float,
+        and returns the float.
+
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as an int
+        :return: the next int in this input stream
+        """
+
+        contents = list(" ".join(self.lines))
+
+        if not contents:
+            raise NoSuchElementException("attemps to read an 'float' value from the input stream, "
+                                         + "but no more tokens are available")
+
+        for token in contents:
+            try:
+                yield float(token)
+            except ValueError:
+                raise InputMismatchException("attempts to read an 'int' value from the input stream, "
+                                             + "but the next token is \"" + token + "\"")
