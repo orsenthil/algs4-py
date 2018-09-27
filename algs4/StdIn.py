@@ -288,8 +288,8 @@ class StdIn:
                                              + "but the next token is \"" + token + "\"")
 
     def readDouble(self) -> float:
-        """Reads the next token from this input stream, parses it as a float,
-        and returns the float.
+        """Reads the next token from this input stream, parses it as a Double,
+        and returns the Double.
 
         @throws NoSuchElementException if the input stream is empty
         @throws InputMismatchException if the next token cannot be parsed as an int
