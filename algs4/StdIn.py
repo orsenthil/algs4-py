@@ -308,3 +308,14 @@ class StdIn:
             except ValueError:
                 raise InputMismatchException("attempts to read an 'int' value from the input stream, "
                                              + "but the next token is \"" + token + "\"")
+
+    def readFloat(self) -> float:
+        """Reads the next token from this input stream, parses it as a Double,
+        and returns the Double.
+
+        @throws NoSuchElementException if the input stream is empty
+        @throws InputMismatchException if the next token cannot be parsed as an int
+        :return: the next int in this input stream
+        """
+
+        self.readDouble()
