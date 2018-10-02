@@ -372,3 +372,13 @@ class StdIn:
         :return: all remaining tokens in this input stream, as an array of strings
         """
         return re.split(self.WHITESPACE_PATTERN, self.content)
+
+
+    def readAllLines(self) -> str:
+        """
+        Reads and returns all the lines of hte input.
+
+        :return: List of Lines.
+        """
+
+        return self.lines
