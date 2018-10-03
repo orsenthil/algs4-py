@@ -188,6 +188,8 @@ will have an extra character \uFEFF at the beginning.
 
 import re
 
+from collections import Iterator
+
 from In import NoSuchElementException, InputMismatchException
 
 
@@ -382,3 +384,12 @@ class StdIn:
         """
 
         return self.lines
+
+    def readAllInts(self) -> Iterator[int]:
+        """Reads all remaining tokens from this input stream, parses them as integers, and returns them as an
+        array of integers.
+
+        :return: all remaining lines in this input stream, as an array of integers
+        """
+        tokens = self.readAllStrings()
+        return list(map(int, tokens))
