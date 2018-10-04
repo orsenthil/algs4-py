@@ -393,3 +393,11 @@ class StdIn:
         """
         tokens = self.readAllStrings()
         return list(map(int, tokens))
+
+    def readAllLongs(self) -> Iterator[int]:
+        """Reads all remaining tokens from this input stream, parses them as longs, and returns them as an
+        array of longs.
+
+        :return: All remaining lines in this input stream, as an array of longs
+        """
+        return self.readAllInts()
