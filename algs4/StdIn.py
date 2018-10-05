@@ -401,3 +401,13 @@ class StdIn:
         :return: All remaining lines in this input stream, as an array of longs
         """
         return self.readAllInts()
+
+
+    def readAllDoubles(self) -> Iterator[float]:
+        """Reads all remaining tokens from this input stream, parses them as doubles, and returns them as an
+        array of doubles.
+
+        :return: All remaining lines in this input stream, as an array of doubles
+        """
+        tokens = self.readAllStrings()
+        return list(map(float, tokens))
