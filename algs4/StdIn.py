@@ -411,3 +411,10 @@ class StdIn:
         """
         tokens = self.readAllStrings()
         return list(map(float, tokens))
+
+    def close(self):
+        """Close the stream.
+
+        :return: None.
+        """
+        self.fopen.close()
