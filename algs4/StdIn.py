@@ -375,7 +375,6 @@ class StdIn:
         """
         return re.split(self.WHITESPACE_PATTERN, self.content)
 
-
     def readAllLines(self) -> str:
         """
         Reads and returns all the lines of hte input.
@@ -401,7 +400,6 @@ class StdIn:
         :return: All remaining lines in this input stream, as an array of longs
         """
         return self.readAllInts()
-
 
     def readAllDoubles(self) -> Iterator[float]:
         """Reads all remaining tokens from this input stream, parses them as doubles, and returns them as an
