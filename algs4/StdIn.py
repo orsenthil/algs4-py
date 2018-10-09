@@ -322,7 +322,6 @@ class StdIn:
 
         self.readDouble()
 
-
     def readLong(self) -> int:
         """Reads the next token from this input stream, parses it as a int,
         and returns the int.
