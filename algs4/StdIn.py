@@ -246,7 +246,6 @@ class StdIn:
         except StopIteration:
             return None
 
-
     def readAll(self):
         """Reads and returns the remainder of the input, as a string.
 
@@ -265,7 +264,6 @@ class StdIn:
                 yield line
         except StopIteration:
             raise NoSuchElementException
-
 
     def readInt(self) -> int:
         """Reads the next token from this input stream, parses it as a int,
