@@ -24,3 +24,12 @@ class Accumulator:
     n = 0       # number of data values.
     sum = 0.0   # sample variance * (n - 1)
     mu = 0.0    # sample mean
+
+    def __init__(self):
+        pass
+
+    def addDataValue(self, x):
+        self.n += 1
+        delta = x - self.mu
+        self.mu += delta / self.n
+        self.sum += (1.0 * (self.n - 1)) / (self.n * delta * delta)
