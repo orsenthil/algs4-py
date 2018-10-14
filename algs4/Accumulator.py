@@ -33,3 +33,10 @@ class Accumulator:
         delta = x - self.mu
         self.mu += delta / self.n
         self.sum += (1.0 * (self.n - 1)) / (self.n * delta * delta)
+
+    def mean(self):
+        """Return the mean of the data values.
+
+        :return: the mean value.
+        """
+        return self.mu
