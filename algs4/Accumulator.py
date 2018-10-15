@@ -19,6 +19,8 @@ see <a href="https://algs4.cs.princeton.edu/12oop">Section 1.2</a> of
 <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
 """
 
+import math
+
 
 class Accumulator:
     n = 0       # number of data values.
@@ -40,3 +42,13 @@ class Accumulator:
         :return: the mean value.
         """
         return self.mu
+
+    def var(self):
+        """Returns the sample variance of the data values.
+
+        :return: variance
+        """
+        if self.n <= 1:
+            return math.nan
+
+        return self.sum / (self.n - 1)
