@@ -51,4 +51,13 @@ class Accumulator:
         if self.n <= 1:
             return math.nan
 
-        return self.sum / (self.n - 1)
+        return self.sum // (self.n - 1)
+
+    def stddev(self):
+        """Returns the sample standard deviation of the data values.
+
+        :return:  standard deviation
+        """
+
+        return math.sqrt(self.var())
+
