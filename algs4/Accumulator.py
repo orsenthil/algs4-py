@@ -61,3 +61,10 @@ class Accumulator:
 
         return math.sqrt(self.var())
 
+    def count(self):
+        """
+        Returns the number of data values.
+
+        :return:  Total number of data values.
+        """
+        return self.n
