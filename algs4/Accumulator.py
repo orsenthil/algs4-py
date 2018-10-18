@@ -68,3 +68,10 @@ class Accumulator:
         :return:  Total number of data values.
         """
         return self.n
+
+    def __str__(self):
+        """String representation of accumulator.
+
+        :return: string representation of accumulator
+        """
+        return "n = " + str(self.n) + ", mean = " + str(self.mean()) + ", stddev = " + str(self.stddev())
