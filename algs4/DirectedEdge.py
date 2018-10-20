@@ -11,3 +11,10 @@ For additional documentation, see <a href="https://algs4.cs.princeton.edu/44sp">
 @author Robert Sedgewick
 @author Kevin Wayne
 """
+
+class DirectedEdge:
+
+    def __init__(self, v, w, weight):
+        self.v = v
+        self.w = w
+        self.weight = weight
