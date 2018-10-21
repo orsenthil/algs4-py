@@ -15,6 +15,11 @@ For additional documentation, see <a href="https://algs4.cs.princeton.edu/44sp">
 class DirectedEdge:
 
     def __init__(self, v, w, weight):
+        """
+        :param v: The tail vertex
+        :param w: The head vertex
+        :param weight: The weight of the directed edge.
+        """
         self.v = v
         self.w = w
         self.weight = weight
