@@ -31,3 +31,12 @@ class DirectedEdge:
         :return: the tail vertex of the directed edge
         """
         return self.v
+
+    def to_vertex(self):
+        """Returns the head vertex of the directed edge.
+
+        :return: the head vertex of the directed edge.
+        """
+        return self.w
+
+
