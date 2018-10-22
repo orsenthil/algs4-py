@@ -12,6 +12,7 @@ For additional documentation, see <a href="https://algs4.cs.princeton.edu/44sp">
 @author Kevin Wayne
 """
 
+
 class DirectedEdge:
 
     def __init__(self, v, w, weight):
@@ -23,3 +24,10 @@ class DirectedEdge:
         self.v = v
         self.w = w
         self.weight = weight
+
+    def from_vertex(self):
+        """Returns the tail vertex of the directed edge.
+
+        :return: the tail vertex of the directed edge
+        """
+        return self.v
