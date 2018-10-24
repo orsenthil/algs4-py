@@ -39,4 +39,11 @@ class DirectedEdge:
         """
         return self.w
 
+    def __str__(self):
+        """Returns a string representation of the directed edge.
+
+        :return: the string representation of the Directed Edge.
+        """
+        return str(self.v) + "->" + str(self.w) + "  %5.2f" % self.weight
+
 
