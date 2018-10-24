@@ -47,3 +47,6 @@ class DirectedEdge:
         return str(self.v) + "->" + str(self.w) + "  %5.2f" % self.weight
 
 
+if __name__ == "__main__":
+    e = DirectedEdge(12, 34, 5.67)
+    print(str(e))
