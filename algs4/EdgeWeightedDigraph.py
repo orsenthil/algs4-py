@@ -18,3 +18,9 @@ For additional documentation,
 see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
 <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
 """
+
+
+class EdgeWeightedDigraph:
+
+    def __init__(self):
+        pass
