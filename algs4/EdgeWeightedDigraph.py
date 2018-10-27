@@ -22,5 +22,10 @@ see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
 
 class EdgeWeightedDigraph:
 
-    def __init__(self):
+    def __init__(self, V):
+        """Initializes an empty edge-weighted digraph with {@code V} vertices and 0 edges.
+
+        @throws IllegalArgumentException if {@code V < 0}
+        :param V: the number of vertices.
+        """
         pass
