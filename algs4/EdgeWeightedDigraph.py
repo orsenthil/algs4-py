@@ -25,7 +25,13 @@ class EdgeWeightedDigraph:
     def __init__(self, V):
         """Initializes an empty edge-weighted digraph with {@code V} vertices and 0 edges.
 
-        @throws IllegalArgumentException if {@code V < 0}
+        @throws ValueError if {@code V < 0}
         :param V: the number of vertices.
         """
-        pass
+        if V < 0:
+            raise ValueError("Number of vertices in a Digraph must be nonnegative")
+        self.E = 0
+        self.indegree = []
+        adj = Bag(V)
+        for v in range(V):
+            adj[v] = Bag()
