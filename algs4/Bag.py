@@ -18,4 +18,5 @@ For additional documentation, see <a href="https://algs4.cs.princeton.edu/13stac
 class Bag:
 
     def __init__(self):
-        pass
+        self.first = None
+        self.n = 0
