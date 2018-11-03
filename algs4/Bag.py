@@ -20,3 +20,10 @@ class Bag:
     def __init__(self):
         self.first = None
         self.n = 0
+
+    def isEmpty(self):
+        """Returns true if this bag is empty.
+
+        :return: True if bag is empty, False otherwise.
+        """
+        return self.first is None
