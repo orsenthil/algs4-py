@@ -27,3 +27,10 @@ class Bag:
         :return: True if bag is empty, False otherwise.
         """
         return self.first is None
+
+    def size(self):
+        """Returns the number of items in this bag.
+
+        :return: the number of items in this bag
+        """
+        return self.n
