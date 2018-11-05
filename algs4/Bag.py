@@ -20,6 +20,7 @@ class Bag:
     def __init__(self):
         self.first = None
         self.n = 0
+        self.nodes = []
 
     def isEmpty(self):
         """Returns true if this bag is empty.
