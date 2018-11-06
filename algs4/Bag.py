@@ -35,3 +35,6 @@ class Bag:
         :return: the number of items in this bag
         """
         return self.n
+
+    def add(self, item):
+        self.nodes.append(item)
