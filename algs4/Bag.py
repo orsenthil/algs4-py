@@ -38,3 +38,9 @@ class Bag:
 
     def add(self, item):
         self.nodes.append(item)
+
+    def __iter__(self):
+        pass
+
+    def next(self):
+        pass
