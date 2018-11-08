@@ -44,3 +44,7 @@ class Bag:
 
     def next(self):
         pass
+
+
+if __name__ == '__main__':
+    bag = Bag()
