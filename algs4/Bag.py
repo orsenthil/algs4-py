@@ -2,6 +2,7 @@
 The {@code Bag} class represents a bag (or multiset) of
 generic items. It supports insertion and iterating over the
 items in arbitrary order.
+
 <p>
 This implementation uses a singly linked list with a static nested class Node.
 See {@link LinkedBag} for the version from the
@@ -48,3 +49,5 @@ class Bag:
 
 if __name__ == '__main__':
     bag = Bag()
+    print(bag.isEmpty())
+
