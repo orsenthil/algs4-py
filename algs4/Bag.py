@@ -51,4 +51,5 @@ if __name__ == '__main__':
     bag = Bag()
     print(bag.isEmpty())
     print(bag.size())
+    bags = list(bag)
 
