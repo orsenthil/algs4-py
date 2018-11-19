@@ -22,7 +22,7 @@ see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
 
 class EdgeWeightedDigraph:
 
-    def __init__(self, V):
+    def __init__(self, V=None, E=None, In=None):
         """Initializes an empty edge-weighted digraph with {@code V} vertices and 0 edges.
 
         @throws ValueError if {@code V < 0}
@@ -35,3 +35,4 @@ class EdgeWeightedDigraph:
         adj = Bag(V)
         for v in range(V):
             adj[v] = Bag()
+
