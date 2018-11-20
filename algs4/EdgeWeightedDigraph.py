@@ -28,7 +28,7 @@ class EdgeWeightedDigraph:
         @throws ValueError if {@code V < 0}
         :param V: the number of vertices.
         """
-        if V < 0:
+        if V is not None and V < 0:
             raise ValueError("Number of vertices in a Digraph must be nonnegative")
         self.E = 0
         self.indegree = []
