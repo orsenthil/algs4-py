@@ -36,6 +36,10 @@ class EdgeWeightedDigraph:
         for v in range(V):
             adj[v] = Bag()
 
+        if In is not None:
+            pass
+
         if V is not None and E is not None:
             pass
+
 
