@@ -29,7 +29,14 @@ class EdgeWeightedDigraph:
         :param V: the number of vertices.
         """
         if V is not None and V < 0:
-            raise ValueError("Number of vertices in a Digraph must be nonnegative")
+            raise ValueError("Number of vertices in a Digraph must be nonnegative.")
+
+        if E is not None and E < 0:
+            raise ValueError("Number of Edges in a Digraph must be nonnegative.")
+
+        if V is not None and E is not None:
+            pass
+
         self.E = 0
         self.indegree = []
         adj = Bag(V)
@@ -39,7 +46,6 @@ class EdgeWeightedDigraph:
         if In is not None:
             pass
 
-        if V is not None and E is not None:
-            pass
+
 
 
