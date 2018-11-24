@@ -34,12 +34,16 @@ class EdgeWeightedDigraph:
         if E is not None and E < 0:
             raise ValueError("Number of Edges in a Digraph must be nonnegative.")
 
+        if E is None and V is None and In is None:
+            raise ValueError("Invalid ")
+
         if V is not None and E is not None:
             pass
 
         self.E = 0
         self.indegree = []
         adj = Bag(V)
+
         for v in range(V):
             adj[v] = Bag()
 
