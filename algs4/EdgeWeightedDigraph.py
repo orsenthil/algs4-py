@@ -42,14 +42,29 @@ class EdgeWeightedDigraph:
 
         self.E = 0
         self.indegree = []
-        adj = Bag(V)
+        self.adj = []
+        self.indegree = []
 
         for v in range(V):
-            adj[v] = Bag()
+            self.adj[v] = Bag()
 
         if In is not None:
             pass
 
 
 
+    def addEdge(self, edge):
+        """
+        Adds the directed edge {@code e} to this edge-weighted digraph.
+        @param  e the edge
+        @throws IllegalArgumentException unless endpoints of edge are between {@code 0} and {@code V-1}
 
+        :param edge:
+        :return:
+        """
+        v = edge.from()
+        w = edge.to()
+        validateVertex(v)
+        validateVertex(w)
+        self.adj[v].add(edge)
+        self.indegree[w] += 1
