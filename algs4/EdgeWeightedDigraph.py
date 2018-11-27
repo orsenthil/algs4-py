@@ -37,16 +37,19 @@ class EdgeWeightedDigraph:
         if E is None and V is None and In is None:
             raise ValueError("Invalid ")
 
+        if V is not None and E is None:
+            for v in range(V):
+                self.adj[v] = Bag()
+
+
         if V is not None and E is not None:
-            pass
+            for v in range(V):
+                self.adj[v] = Bag()
 
         self.E = 0
         self.indegree = []
         self.adj = []
         self.indegree = []
-
-        for v in range(V):
-            self.adj[v] = Bag()
 
         if In is not None:
             pass
