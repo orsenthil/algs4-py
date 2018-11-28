@@ -19,6 +19,10 @@ see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
 <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
 """
 
+import random
+
+from DirectedEdge import DirectedEdge
+
 
 class EdgeWeightedDigraph:
 
@@ -45,6 +49,12 @@ class EdgeWeightedDigraph:
         if V is not None and E is not None:
             for v in range(V):
                 self.adj[v] = Bag()
+            for e in range(E):
+                v1 = random.choice(v)
+                v2 = random.choice(v)
+                w = random.randint() * 100
+
+                self.addEdge(v1, v2, w)
 
         self.E = 0
         self.indegree = []
