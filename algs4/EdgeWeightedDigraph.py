@@ -69,8 +69,9 @@ class EdgeWeightedDigraph:
     def addEdge(self, edge):
         """
         Adds the directed edge {@code e} to this edge-weighted digraph.
-        @param  e the edge
-        @throws IllegalArgumentException unless endpoints of edge are between {@code 0} and {@code V-1}
+        param  e the edge
+
+        throw ValueError unless endpoints of edge are between {@code 0} and {@code V-1}
 
         :param edge:
         :return:
