@@ -79,7 +79,12 @@ class EdgeWeightedDigraph:
         """
         v = edge.from()
         w = edge.to()
-        validateVertex(v)
-        validateVertex(w)
+        self.validateVertex(v)
+        self.validateVertex(w)
         self.adj[v].add(edge)
         self.indegree[w] += 1
+
+
+    def validateVertex(self, v):
+        if (v < 0 or v > self.V):
+            raise ValueError("Vertex {v} cannot be less than 0 or greater than V")
