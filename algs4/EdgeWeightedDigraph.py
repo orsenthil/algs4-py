@@ -65,8 +65,6 @@ class EdgeWeightedDigraph:
         if In is not None:
             pass
 
-
-
     def addEdge(self, edge):
         """
         Adds the directed edge {@code e} to this edge-weighted digraph.
@@ -84,12 +82,11 @@ class EdgeWeightedDigraph:
         self.adj[v].add(edge)
         self.indegree[w] += 1
 
-
     def validateVertex(self, v):
         """ Validate the value of the vertex  v.
 
         :param v:
         :return:
         """
-        if (v < 0 or v > self.V):
+        if v < 0 or v > self.V:
             raise ValueError("Vertex {v} cannot be less than 0 or greater than V")
