@@ -60,6 +60,7 @@ class EdgeWeightedDigraph:
                 self.addEdge(v1, v2, w)
 
         self.E = 0
+
         self.indegree = []
         self.adj = []
         self.indegree = []
@@ -78,8 +79,10 @@ class EdgeWeightedDigraph:
         """
         v = edge.from()
         w = edge.to()
+
         self.validateVertex(v)
         self.validateVertex(w)
+
         self.adj[v].add(edge)
         self.indegree[w] += 1
 
@@ -93,3 +96,8 @@ class EdgeWeightedDigraph:
             raise ValueError("Vertex {v} cannot be less than 0 or greater than V")
 
         return True
+
+    def V(self):
+        """Returns the number of vertices in this edge-weighted digraph.
+        """
+        return self.V
