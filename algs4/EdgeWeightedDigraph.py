@@ -75,7 +75,7 @@ class EdgeWeightedDigraph:
         throw ValueError unless endpoints of edge are between {@code 0} and {@code V-1}
 
         :param edge: Edge of the Digraph.
-        :return:
+        :return: None
         """
         v = edge.from()
         w = edge.to()
