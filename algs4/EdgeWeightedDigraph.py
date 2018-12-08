@@ -101,3 +101,8 @@ class EdgeWeightedDigraph:
         """Returns the number of vertices in this edge-weighted digraph.
         """
         return self.V
+
+    def E(self):
+        """Returns the number of edges in this edge-weighted digraph.
+        """
+        return self.E
