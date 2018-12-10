@@ -108,4 +108,4 @@ class EdgeWeightedDigraph:
         return self.E
 
     def __str__(self):
-        pass
+        return "EdgedWeightedDigraph (V={V}, E={E}".format(V=self.V, E=self.E)
