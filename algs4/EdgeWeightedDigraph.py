@@ -48,7 +48,6 @@ class EdgeWeightedDigraph:
             for v in range(V):
                 self.adj[v] = Bag()
 
-
         if V is not None and E is not None:
             for v in range(V):
                 self.adj[v] = Bag()
@@ -109,3 +108,8 @@ class EdgeWeightedDigraph:
 
     def __str__(self):
         return "EdgedWeightedDigraph (V={V}, E={E}".format(V=self.V, E=self.E)
+
+
+
+if __name__ == '__main__':
+    pass
