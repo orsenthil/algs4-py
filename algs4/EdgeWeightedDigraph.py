@@ -112,4 +112,4 @@ class EdgeWeightedDigraph:
 
 
 if __name__ == '__main__':
-    pass
+    ewd = EdgeWeightedDigraph()
