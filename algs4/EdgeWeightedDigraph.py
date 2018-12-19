@@ -114,4 +114,4 @@ class EdgeWeightedDigraph:
 if __name__ == '__main__':
     ewd = EdgeWeightedDigraph(10)
     print(ewd.V())
-    ewd.E()
+    print(ewd.E())
