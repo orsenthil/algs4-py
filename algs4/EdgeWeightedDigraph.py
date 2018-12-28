@@ -106,6 +106,17 @@ class EdgeWeightedDigraph:
         """
         return self.E
 
+    def adj(self, v):
+        """Returns the directed edges incident from vertex {@code v}.
+        @param  v the vertex
+        @return the directed edges incident from vertex {@code v} as an Iterable
+        @throws IllegalArgumentException unless {@code 0 <= v < V}
+
+        :return:
+        """
+        self.validateVertex(v)
+        return self.adj[v]
+
     def __str__(self):
         return "EdgedWeightedDigraph (V={V}, E={E}".format(V=self.V, E=self.E)
 
