@@ -62,7 +62,6 @@ class EdgeWeightedDigraph:
 
         self.indegree = []
         self.adj = []
-        self.indegree = []
 
         if In is not None:
             pass
@@ -127,6 +126,32 @@ class EdgeWeightedDigraph:
         """
         self.validateVertex(v)
         return len(self.adj(v))
+
+    def inDegree(self, v):
+        """Returns the number of directed edges incident to vertex {@code v}.
+        This is known as the <em>indegree</em> of vertex {@code v}.
+        @param  v the vertex
+        @return the indegree of vertex {@code v}
+        @throws IllegalArgumentException unless {@code 0 <= v < V}
+
+        :param v: The vertex v
+        :return:
+        """
+        self.validateVertex(v)
+        return self.indegree[v]
+	
+    def edges(self):
+	"""
+     	Returns all directed edges in this edge-weighted digraph.
+     	To iterate over the edges in this edge-weighted digraph, use foreach notation:
+     	{@code for (DirectedEdge e : G.edges())}.
+    
+     	@return all edges in this edge-weighted digraph, as an iterable
+	"""
+	l = []
+	for v in range(self.V):
+		l.append(self.adj(v))
+	return l
 
     def __str__(self):
         return "EdgedWeightedDigraph (V={V}, E={E}".format(V=self.V, E=self.E)
