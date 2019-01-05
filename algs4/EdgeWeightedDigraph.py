@@ -49,6 +49,7 @@ class EdgeWeightedDigraph:
                 self.adj[v] = Bag()
 
         if V is not None and E is not None:
+            self.V = V
             for v in range(V):
                 self.adj[v] = Bag()
             for e in range(E):
@@ -95,7 +96,7 @@ class EdgeWeightedDigraph:
 
         return True
 
-    def V(self):
+    def Vertices(self):
         """Returns the number of vertices in this edge-weighted digraph.
         """
         return self.V
@@ -105,7 +106,7 @@ class EdgeWeightedDigraph:
         """
         return self.E
 
-    def adj(self, v):
+    def adjV(self, v):
         """Returns the directed edges incident from vertex {@code v}.
         @param  v the vertex
         @return the directed edges incident from vertex {@code v} as an Iterable
@@ -141,17 +142,17 @@ class EdgeWeightedDigraph:
         return self.indegree[v]
 
     def edges(self):
-	    """
+        """
      	Returns all directed edges in this edge-weighted digraph.
      	To iterate over the edges in this edge-weighted digraph, use foreach notation:
      	{@code for (DirectedEdge e : G.edges())}.
 
      	@return all edges in this edge-weighted digraph, as an iterable
 	    """
-	    l = []
-	    for v in range(self.V):
-		    l.append(self.adj(v))
-	    return l
+        l = []
+        for v in range(self.Vertices()):
+            l.append(self.adj[v])
+        return l
 
     def __str__(self):
         """Returns a string representation of this edge-weighted digraph.
