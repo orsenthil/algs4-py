@@ -125,7 +125,7 @@ class EdgeWeightedDigraph:
         @throws IllegalArgumentException unless {@code 0 <= v < V}
         """
         self.validateVertex(v)
-        return len(self.adj(v))
+        return len(self.adj[v])
 
     def inDegree(self, v):
         """Returns the number of directed edges incident to vertex {@code v}.
