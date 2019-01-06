@@ -23,6 +23,7 @@ see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
 
 import random
 
+from Bag import Bag
 from DirectedEdge import DirectedEdge
 
 
@@ -67,7 +68,7 @@ class EdgeWeightedDigraph:
         if In is not None:
             pass
 
-    def addEdge(self, edge):
+    def addEdge(self, edge: DirectedEdge):
         """
         Adds the directed edge {@code e} to this edge-weighted digraph.
 
@@ -76,8 +77,8 @@ class EdgeWeightedDigraph:
         :param edge: Edge of the Digraph.
         :return: None
         """
-        v = edge.from()
-        w = edge.to()
+        v = edge.from_vertex()
+        w = edge.to_vertex()
 
         self.validateVertex(v)
         self.validateVertex(w)
