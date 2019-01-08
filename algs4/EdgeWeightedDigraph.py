@@ -54,8 +54,8 @@ class EdgeWeightedDigraph:
             for v in range(V):
                 self.adj[v] = Bag()
             for e in range(E):
-                v1 = random.choice(v)
-                v2 = random.choice(v)
+                v1 = random.choice(range(self.V))
+                v2 = random.choice(range(self.V))
                 w = random.randint() * 100
 
                 self.addEdge(v1, v2, w)
