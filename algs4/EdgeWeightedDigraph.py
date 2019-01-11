@@ -106,6 +106,13 @@ class EdgeWeightedDigraph:
         """
         return self.E
 
+    def V(self):
+        """Returns the vertices in this edge weighted digraph.
+
+        :return:
+        """
+        return self.V
+
     def adjV(self, v):
         """Returns the directed edges incident from vertex {@code v}.
         @param  v the vertex
