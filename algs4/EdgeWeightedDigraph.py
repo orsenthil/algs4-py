@@ -108,8 +108,6 @@ class EdgeWeightedDigraph:
 
     def V(self):
         """Returns the vertices in this edge weighted digraph.
-
-        :return:
         """
         return self.V
 
@@ -150,12 +148,11 @@ class EdgeWeightedDigraph:
 
     def edges(self):
         """
-     	Returns all directed edges in this edge-weighted digraph.
-     	To iterate over the edges in this edge-weighted digraph, use foreach notation:
-     	{@code for (DirectedEdge e : G.edges())}.
-
-     	@return all edges in this edge-weighted digraph, as an iterable
-	    """
+        Returns all directed edges in this edge-weighted digraph.
+        To iterate over the edges in this edge-weighted digraph, use foreach notation:
+        {@code for (DirectedEdge e : G.edges())}.
+        @return all edges in this edge-weighted digraph, as an iterable.
+        """
         l = []
         for v in range(self.Vertices()):
             l.append(self.adj[v])
@@ -168,8 +165,6 @@ class EdgeWeightedDigraph:
         followed by the <em>V</em> adjacency lists of edges
         """
         return "EdgedWeightedDigraph (V={V}, E={E}".format(V=self.V, E=self.E)
-
-
 
 
 if __name__ == '__main__':
