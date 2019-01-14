@@ -96,20 +96,20 @@ class EdgeWeightedDigraph:
 
         return True
 
-    def Vertices(self):
+    def vertices(self):
         """Returns the number of vertices in this edge-weighted digraph.
+        """
+        return self.V
+
+    def V(self):
+        """Returns the vertices in this edge weighted digraph.
         """
         return self.V
 
     def E(self):
         """Returns the number of edges in this edge-weighted digraph.
         """
-        return self.E
-
-    def V(self):
-        """Returns the vertices in this edge weighted digraph.
-        """
-        return self.V
+        return self.edges()
 
     def adjV(self, v):
         """Returns the directed edges incident from vertex {@code v}.
@@ -154,7 +154,7 @@ class EdgeWeightedDigraph:
         @return all edges in this edge-weighted digraph, as an iterable.
         """
         l = []
-        for v in range(self.Vertices()):
+        for v in range(self.vertices()):
             l.append(self.adj[v])
         return l
 
