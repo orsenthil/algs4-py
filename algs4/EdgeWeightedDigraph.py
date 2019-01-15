@@ -109,7 +109,7 @@ class EdgeWeightedDigraph:
     def E(self):
         """Returns the number of edges in this edge-weighted digraph.
         """
-        return self.edges()
+        return self.E
 
     def adjV(self, v):
         """Returns the directed edges incident from vertex {@code v}.
