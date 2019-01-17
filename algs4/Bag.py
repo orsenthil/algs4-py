@@ -41,10 +41,14 @@ class Bag:
         self.nodes.append(item)
 
     def __iter__(self):
-        pass
+        yield self.nodes[self.n]
 
-    def next(self):
-        pass
+    def __next__(self):
+        if self.isEmpty():
+            raise StopIteration("Empty Container")
+        for n in self.nodes:
+            return n
+
 
 
 if __name__ == '__main__':
