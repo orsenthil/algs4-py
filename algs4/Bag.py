@@ -50,7 +50,6 @@ class Bag:
             return n
 
 
-
 if __name__ == '__main__':
     bag = Bag()
     print(bag.isEmpty())
