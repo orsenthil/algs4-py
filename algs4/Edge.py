@@ -19,3 +19,6 @@ class Edge:
         self.w = w
         self.weight = weight
 
+
+if __name__ == '__main__':
+    e = Edge(12, 34, 5.67)
