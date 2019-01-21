@@ -19,6 +19,10 @@ class Edge:
         self.w = w
         self.weight = weight
 
+    def __str__(self):
+        return "Edge({v}, {w}, {weight})".format(v=self.v, w=self.w, weight=self.weight)
+
 
 if __name__ == '__main__':
     e = Edge(12, 34, 5.67)
+    print(str(e))
