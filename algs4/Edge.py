@@ -22,6 +22,13 @@ class Edge:
     def __str__(self):
         return "Edge({v}, {w}, {weight})".format(v=self.v, w=self.w, weight=self.weight)
 
+    def weight(self):
+        """Returns the weight of the edge.
+
+        :return: The weight of the edge.
+        """
+        return self.weight
+
 
 if __name__ == '__main__':
     e = Edge(12, 34, 5.67)
