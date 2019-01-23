@@ -29,6 +29,13 @@ class Edge:
         """
         return self.weight
 
+    def either(self):
+        """Returns either endpoint of this edge.
+
+        :return: either endpoint of this edge.
+        """
+        return self.v
+
 
 if __name__ == '__main__':
     e = Edge(12, 34, 5.67)
