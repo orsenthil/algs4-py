@@ -12,6 +12,10 @@ For additional documentation, see <a href="https://algs4.cs.princeton.edu/43mst"
 """
 
 
+class IllegalArgumentException(Exception):
+    pass
+
+
 class Edge:
 
     def __init__(self, v, w, weight):
@@ -35,6 +39,19 @@ class Edge:
         :return: either endpoint of this edge.
         """
         return self.v
+
+    def other(self, vertex):
+        """Returns the endpoint of this edge that is different from the given vertex.
+
+        :param vertex: vertex one endpoint of this edge
+        :return: the other endpoint of this edge
+        :throws: IllegalArgumentException if the vertex is not one of the endpoints of this edge
+        """
+        if vertex == self.v:
+            return self.w
+        if vertex == self.w:
+            return self.v
+        raise IllegalArgumentException("Illegal Endpoint")
 
 
 if __name__ == '__main__':
