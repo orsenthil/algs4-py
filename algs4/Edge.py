@@ -53,6 +53,15 @@ class Edge:
             return self.v
         raise IllegalArgumentException("Illegal Endpoint")
 
+    def __eq__(self, other):
+        return (self.v, self.w, self.weight) == (other.v, other.w, other.weight)
+
+    def __ne__(self, other):
+        return not (self.v, self.w, self.weight) == (other.v, other.w, other.weight)
+
+    def __lt__(self, other):
+        return (self.v, self.w, self.weight) < (other.v, other.w, other.weight)
+
 
 if __name__ == '__main__':
     e = Edge(12, 34, 5.67)
