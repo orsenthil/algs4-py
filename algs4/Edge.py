@@ -23,9 +23,6 @@ class Edge:
         self.w = w
         self.weight = weight
 
-    def __str__(self):
-        return "Edge({v}, {w}, {weight})".format(v=self.v, w=self.w, weight=self.weight)
-
     def weight(self):
         """Returns the weight of the edge.
 
@@ -61,6 +58,9 @@ class Edge:
 
     def __lt__(self, other):
         return (self.v, self.w, self.weight) < (other.v, other.w, other.weight)
+
+    def __str__(self):
+        return "Edge({v}, {w}, {weight})".format(v=self.v, w=self.w, weight=self.weight)
 
 
 if __name__ == '__main__':
