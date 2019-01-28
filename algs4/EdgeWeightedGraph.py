@@ -21,3 +21,11 @@ For additional documentation,
 see <a href="https://algs4.cs.princeton.edu/43mst">Section 4.3</a> of
 <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
 """
+
+
+class EdgeWeightedGraph:
+
+    NEWLINE = "\n"
+
+    def __init__(self, E=None, V=None, In=None, G=None):
+        pass
