@@ -28,4 +28,6 @@ class EdgeWeightedGraph:
     NEWLINE = "\n"
 
     def __init__(self, E=None, V=None, In=None, G=None):
-        pass
+
+        if E is None and V is None and In is None and G is None:
+            raise ValueError("One of E, V, In or G argument must be given.")
