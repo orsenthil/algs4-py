@@ -23,6 +23,10 @@ see <a href="https://algs4.cs.princeton.edu/43mst">Section 4.3</a> of
 """
 
 
+class IllegalArgumentException(Exception):
+    pass
+
+
 class EdgeWeightedGraph:
 
     NEWLINE = "\n"
@@ -31,3 +35,6 @@ class EdgeWeightedGraph:
 
         if E is None and V is None and In is None and G is None:
             raise ValueError("One of E, V, In or G argument must be given.")
+
+        if V is not None and V < 0:
+            raise IllegalArgumentException("Number of vertices must be non-negative.")
