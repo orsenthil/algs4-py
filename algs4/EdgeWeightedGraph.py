@@ -38,3 +38,6 @@ class EdgeWeightedGraph:
 
         if V is not None and V < 0:
             raise IllegalArgumentException("Number of vertices must be non-negative.")
+
+        if E is not None and E < 0:
+            raise IllegalArgumentException("Number of Edges must be non-negative.")
