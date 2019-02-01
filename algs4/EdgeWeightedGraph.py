@@ -41,3 +41,8 @@ class EdgeWeightedGraph:
 
         if E is not None and E < 0:
             raise IllegalArgumentException("Number of Edges must be non-negative.")
+
+        if In is not None:
+            E = In.readInt()
+            if E < 0:
+                raise IllegalArgumentException("Number of Edges must be non-negative.")
