@@ -33,6 +33,8 @@ class EdgeWeightedGraph:
 
     def __init__(self, E=None, V=None, In=None, G=None):
 
+        self.G = None
+
         if E is None and V is None and In is None and G is None:
             raise ValueError("One of E, V, In or G argument must be given.")
 
@@ -46,3 +48,6 @@ class EdgeWeightedGraph:
             E = In.readInt()
             if E < 0:
                 raise IllegalArgumentException("Number of Edges must be non-negative.")
+
+        if G is not None:
+            self.G = G
