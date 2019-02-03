@@ -51,3 +51,4 @@ class EdgeWeightedGraph:
 
         if G is not None:
             self.G = G
+            self.V = G.V()
