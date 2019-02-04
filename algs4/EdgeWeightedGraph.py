@@ -38,8 +38,11 @@ class EdgeWeightedGraph:
         if E is None and V is None and In is None and G is None:
             raise ValueError("One of E, V, In or G argument must be given.")
 
-        if V is not None and V < 0:
-            raise IllegalArgumentException("Number of vertices must be non-negative.")
+        if V is not None:
+            if V < 0:
+                raise IllegalArgumentException("Number of vertices must be non-negative.")
+            self.V = V
+
 
         if E is not None and E < 0:
             raise IllegalArgumentException("Number of Edges must be non-negative.")
@@ -52,3 +55,5 @@ class EdgeWeightedGraph:
         if G is not None:
             self.G = G
             self.V = G.V()
+
+
