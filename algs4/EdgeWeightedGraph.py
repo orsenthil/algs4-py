@@ -21,6 +21,7 @@ For additional documentation,
 see <a href="https://algs4.cs.princeton.edu/43mst">Section 4.3</a> of
 <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
 """
+from Bag import Bag
 
 
 class IllegalArgumentException(Exception):
@@ -34,6 +35,7 @@ class EdgeWeightedGraph:
     def __init__(self, E=None, V=None, In=None, G=None):
 
         self.G = None
+        self.E = None
 
         if E is None and V is None and In is None and G is None:
             raise ValueError("One of E, V, In or G argument must be given.")
@@ -42,6 +44,10 @@ class EdgeWeightedGraph:
             if V < 0:
                 raise IllegalArgumentException("Number of vertices must be non-negative.")
             self.V = V
+            self.E = 0
+            adj = []
+            for v in range(self.V):
+                adj.append(Bag())
 
         if E is not None:
             if E < 0:
