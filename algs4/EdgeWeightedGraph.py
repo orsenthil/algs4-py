@@ -70,3 +70,10 @@ class EdgeWeightedGraph:
         """
         return self.V
 
+    def E(self):
+        """Returns the number of edges in this edge-weighted graph.
+
+        :return:  The number of edges in this edge weighted graph.
+        """
+        return self.E
+
