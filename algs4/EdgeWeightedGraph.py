@@ -77,3 +77,14 @@ class EdgeWeightedGraph:
         """
         return self.E
 
+    def validateVertex(self, v):
+        """ Validate the value of the vertex  v.
+
+        :param v: vertex to validate
+        :return: True for a valid version, or raise a ValueError
+        """
+        if v < 0 or v > self.V:
+            raise ValueError("Vertex {v} cannot be less than 0 or greater than V")
+
+        return True
+
