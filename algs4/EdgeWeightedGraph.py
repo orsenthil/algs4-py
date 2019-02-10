@@ -36,6 +36,7 @@ class EdgeWeightedGraph:
 
         self.G = None
         self.E = None
+        self.adj = []
 
         if E is None and V is None and In is None and G is None:
             raise ValueError("One of E, V, In or G argument must be given.")
@@ -45,9 +46,8 @@ class EdgeWeightedGraph:
                 raise IllegalArgumentException("Number of vertices must be non-negative.")
             self.V = V
             self.E = 0
-            adj = []
             for v in range(self.V):
-                adj.append(Bag())
+                self.adj.append(Bag())
 
         if E is not None:
             if E < 0:
@@ -87,4 +87,16 @@ class EdgeWeightedGraph:
             raise ValueError("Vertex {v} cannot be less than 0 or greater than V")
 
         return True
+
+    def adj(self, v):
+        """Returns the edges incident on vertex {@code v}.
+
+        @param  v the vertex
+        @return the edges incident on vertex {@code v} as an Iterable
+        @throws IllegalArgumentException unless {@code 0 <= v < V}
+
+        :return: the edges incident on vertex {@code v} as an Iterable
+        """
+        self.validateVertex(v)
+        return self.adj[v]
 
