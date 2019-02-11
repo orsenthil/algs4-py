@@ -100,3 +100,13 @@ class EdgeWeightedGraph:
         self.validateVertex(v)
         return self.adj[v]
 
+    def outDegree(self, v):
+        """Returns the number of directed edges incident from vertex {@code v}.
+          This is known as the <em>outdegree</em> of vertex {@code v}.
+
+        :param v:  The vertex
+        :return:  The outdegree of vertex v
+        @throws IllegalArgumentException unless {@code 0 <= v < V}
+        """
+        self.validateVertex(v)
+        return len(self.adj[v])
