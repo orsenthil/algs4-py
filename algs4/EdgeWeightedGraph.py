@@ -110,3 +110,16 @@ class EdgeWeightedGraph:
         """
         self.validateVertex(v)
         return len(self.adj[v])
+
+    def inDegree(self, v):
+        """Returns the number of directed edges incident to vertex {@code v}.
+        This is known as the <em>indegree</em> of vertex {@code v}.
+        @param  v the vertex
+        @return the indegree of vertex {@code v}
+        @throws IllegalArgumentException unless {@code 0 <= v < V}
+
+        :param v: The vertex v
+        :return:
+        """
+        self.validateVertex(v)
+        return self.indegree[v]
