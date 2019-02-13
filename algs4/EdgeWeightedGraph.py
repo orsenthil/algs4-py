@@ -123,3 +123,15 @@ class EdgeWeightedGraph:
         """
         self.validateVertex(v)
         return self.indegree[v]
+
+    def edges(self):
+        """
+        Returns all directed edges in this edge-weighted digraph.
+        To iterate over the edges in this edge-weighted digraph, use foreach notation:
+        {@code for (DirectedEdge e : G.edges())}.
+        @return all edges in this edge-weighted digraph, as an iterable.
+        """
+        l = []
+        for v in range(self.vertices()):
+            l.append(self.adj[v])
+        return l
