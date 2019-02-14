@@ -135,3 +135,11 @@ class EdgeWeightedGraph:
         for v in range(self.vertices()):
             l.append(self.adj[v])
         return l
+
+    def __str__(self):
+        """Returns a string representation of this edge-weighted graph.
+
+        @return: the number of vertices <em>V</em>, followed by the number of edges <em>E</em>,
+        followed by the <em>V</em> adjacency lists of edges
+        """
+        return "EdgedWeightedGraph (V={V}, E={E}".format(V=self.V, E=self.E)
