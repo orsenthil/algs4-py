@@ -143,3 +143,10 @@ class EdgeWeightedGraph:
         followed by the <em>V</em> adjacency lists of edges
         """
         return "EdgedWeightedGraph (V={V}, E={E}".format(V=self.V, E=self.E)
+
+
+if __name__ == '__main__':
+    ewd = EdgeWeightedGraph(10)
+    print(ewd.V())
+    print(ewd.E)
+    print(ewd.edges())
