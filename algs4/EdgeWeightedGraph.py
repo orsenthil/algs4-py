@@ -63,6 +63,11 @@ class EdgeWeightedGraph:
             self.G = G
             self.V = G.V()
 
+    def vertices(self):
+        """Returns the number of vertices in this edge-weighted digraph.
+        """
+        return self.V
+
     def V(self):
         """Returns the number of vertices in this edge-weighted graph.
 
