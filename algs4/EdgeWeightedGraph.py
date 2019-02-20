@@ -37,6 +37,7 @@ class EdgeWeightedGraph:
         self.G = None
         self.E = None
         self.adj = []
+        self.indegree = []
 
         if E is None and V is None and In is None and G is None:
             raise ValueError("One of E, V, In or G argument must be given.")
