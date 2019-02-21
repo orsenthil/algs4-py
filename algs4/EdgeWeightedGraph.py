@@ -21,6 +21,7 @@ For additional documentation,
 see <a href="https://algs4.cs.princeton.edu/43mst">Section 4.3</a> of
 <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
 """
+import DirectedEdge
 from Bag import Bag
 
 
@@ -141,6 +142,27 @@ class EdgeWeightedGraph:
         for v in range(self.vertices()):
             l.append(self.adj[v])
         return l
+
+    def addEdge(self, edge: DirectedEdge):
+        """
+        Adds the directed edge {@code e} to this edge-weighted digraph.
+
+        throw ValueError unless endpoints of edge are between {@code 0} and {@code V-1}
+
+        :param edge: Edge of the Digraph.
+        :return: None
+        """
+        v = edge.from_vertex()
+        w = edge.to_vertex()
+
+        self.validateVertex(v)
+        self.validateVertex(w)
+
+        self.adj[v].add(edge)
+        self.adj[w].add(edge)
+        self.indegree[w] += 1
+        self.indegree[v] += 1
+
 
     def __str__(self):
         """Returns a string representation of this edge-weighted graph.
