@@ -145,7 +145,8 @@ class EdgeWeightedGraph:
 
     def addEdge(self, edge: DirectedEdge):
         """
-        Adds the directed edge {@code e} to this edge-weighted digraph.
+        Adds the directed edge {@code e} to this edge-weighted graph.
+        The edges are added between vertices in both directions.
 
         throw ValueError unless endpoints of edge are between {@code 0} and {@code V-1}
 
@@ -162,7 +163,6 @@ class EdgeWeightedGraph:
         self.adj[w].add(edge)
         self.indegree[w] += 1
         self.indegree[v] += 1
-
 
     def __str__(self):
         """Returns a string representation of this edge-weighted graph.
