@@ -163,6 +163,7 @@ class EdgeWeightedGraph:
         self.adj[w].add(edge)
         self.indegree[w] += 1
         self.indegree[v] += 1
+        self.E += 1
 
     def __str__(self):
         """Returns a string representation of this edge-weighted graph.
