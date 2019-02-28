@@ -6,6 +6,7 @@ to be or not to be (2 left on queue)
 
 """
 
+
 class Node:
     def __init__(self):
         self.item = None
@@ -18,3 +19,10 @@ class Queue:
         self.first = None
         self.last = None
         self.n = 0
+
+    def isEmpty(self):
+        """Returns true if this queue is empty.
+
+        :return: True if the queue is empty, False otherwise
+        """
+        return self.first is None
