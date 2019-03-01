@@ -26,3 +26,10 @@ class Queue:
         :return: True if the queue is empty, False otherwise
         """
         return self.first is None
+
+    def size(self):
+        """Return the number of items in this queue.
+
+        :return: n the number of items in this queue.
+        """
+        return self.n
