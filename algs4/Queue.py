@@ -7,6 +7,10 @@ to be or not to be (2 left on queue)
 """
 
 
+class NoSuchElementException(ValueError):
+    pass
+
+
 class Node:
     def __init__(self):
         self.item = None
@@ -33,3 +37,14 @@ class Queue:
         :return: n the number of items in this queue.
         """
         return self.n
+
+
+    def peek(self):
+        """Returns the item least recently added to this queue.
+
+        :return: The item least recently added to the queue.
+        """
+        if self.isEmpty():
+            raise NoSuchElementException("Queue underflow.")
+
+        return self.first.item
