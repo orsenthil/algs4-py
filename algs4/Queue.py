@@ -48,3 +48,20 @@ class Queue:
             raise NoSuchElementException("Queue underflow.")
 
         return self.first.item
+
+    def enqueue(self, item):
+        """ Adds the item to this queue.
+
+        :param item:  Item to add to the queue.
+        :return: None
+        """
+        oldlast = self.last
+        self.last = Node()
+        self.last.item = item
+        self.last.next = None
+
+        if self.isEmpty():
+            self.first = self.last
+        else:
+            oldlast.next = self.last
+        self.n += 1
