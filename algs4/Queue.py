@@ -50,7 +50,7 @@ class Queue:
         return self.first.item
 
     def enqueue(self, item):
-        """ Adds the item to this queue.
+        """Adds the item to this queue.
 
         :param item:  Item to add to the queue.
         :return: None
@@ -65,3 +65,22 @@ class Queue:
         else:
             oldlast.next = self.last
         self.n += 1
+
+    def dequeue(self):
+        """Removes and returns the item on this queue that was least recently added.
+
+        :return: the item on this queue that was least recently added
+        """
+
+        if self.isEmpty():
+            raise NoSuchElementException("Queue underflow.")
+
+        item = self.first.item
+        self.first = self.first.next
+
+        self.n -= 1
+
+        if self.isEmpty():
+            self.last = None
+
+        return item
