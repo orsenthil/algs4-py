@@ -88,7 +88,6 @@ class Queue:
     def __iter__(self):
         yield self
 
-
     def __next__(self):
         if self.isEmpty():
             raise StopIteration("Queue underflow.")
@@ -102,3 +101,9 @@ class Queue:
             self.last = None
 
         return item
+
+    def __str__(self):
+        items = []
+        for item in iter(self):
+            items.append(item)
+        return str(item)
