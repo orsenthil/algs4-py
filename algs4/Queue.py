@@ -99,11 +99,19 @@ class Queue:
 
         if self.isEmpty():
             self.last = None
+            raise StopIteration("Queue UnderFlow")
 
         return item
 
     def __str__(self):
         items = []
-        for item in iter(self):
-            items.append(item)
-        return str(item)
+        return str(items)
+
+
+if __name__ == '__main__':
+    n1 = Node()
+    n2 = Node()
+    q = Queue()
+    q.enqueue(n1)
+    q.enqueue(n2)
+    print(q)
