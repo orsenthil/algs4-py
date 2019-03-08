@@ -16,6 +16,9 @@ class Node:
         self.item = None
         self.next = None
 
+    def __str__(self):
+        return str(self.item)
+
 
 class Queue:
 
@@ -104,8 +107,7 @@ class Queue:
         return item
 
     def __str__(self):
-        items = []
-        return str(items)
+        return str(self.first)
 
 
 if __name__ == '__main__':
@@ -114,4 +116,5 @@ if __name__ == '__main__':
     q = Queue()
     q.enqueue(n1)
     q.enqueue(n2)
-    print(q)
+    for q1 in iter(q):
+        print(q1)
