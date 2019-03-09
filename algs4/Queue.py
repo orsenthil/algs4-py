@@ -112,7 +112,9 @@ class Queue:
 
 if __name__ == '__main__':
     n1 = Node()
+    n1.item = "item1"
     n2 = Node()
+    n2.item = "item2"
     q = Queue()
     q.enqueue(n1)
     q.enqueue(n2)
