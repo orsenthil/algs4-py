@@ -89,7 +89,7 @@ class Queue:
         return item
 
     def __iter__(self):
-        yield self
+        return self
 
     def __next__(self):
         if self.isEmpty():
@@ -102,7 +102,6 @@ class Queue:
 
         if self.isEmpty():
             self.last = None
-            raise StopIteration("Queue UnderFlow")
 
         return item
 
