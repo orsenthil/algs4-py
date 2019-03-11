@@ -25,6 +25,7 @@ class Queue:
     def __init__(self):
         self.first = None
         self.last = None
+        self.itern = 0
         self.n = 0
 
     def isEmpty(self):
@@ -89,7 +90,9 @@ class Queue:
         return item
 
     def __iter__(self):
+        self.itern = self.n
         return self
+
 
     def __next__(self):
         if self.isEmpty():
@@ -98,7 +101,7 @@ class Queue:
         item = self.first.item
         self.first = self.first.next
 
-        self.n -= 1
+        self.itern -= 1
 
         if self.isEmpty():
             self.last = None
@@ -117,5 +120,8 @@ if __name__ == '__main__':
     q = Queue()
     q.enqueue(n1)
     q.enqueue(n2)
+    for q1 in iter(q):
+        print(q1)
+    q.dequeue()
     for q1 in iter(q):
         print(q1)
