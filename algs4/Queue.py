@@ -2,6 +2,7 @@
 A generic queue, implemented using a linked list.
 
 % python Queue.py tobe.txt
+
 to be or not to be (2 left on queue)
 
 """
@@ -41,7 +42,6 @@ class Queue:
         :return: n the number of items in this queue.
         """
         return self.n
-
 
     def peek(self):
         """Returns the item least recently added to this queue.
@@ -93,7 +93,6 @@ class Queue:
         self.itern = self.n
         return self
 
-
     def __next__(self):
         if self.isEmpty():
             raise StopIteration("Queue underflow.")
@@ -120,8 +119,11 @@ if __name__ == '__main__':
     q = Queue()
     q.enqueue(n1)
     q.enqueue(n2)
+
     for q1 in iter(q):
         print(q1)
+
     q.dequeue()
+
     for q1 in iter(q):
         print(q1)
