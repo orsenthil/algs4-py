@@ -3,7 +3,8 @@ The StdIn class provides static methods for reading strings and numbers from sta
 
 These functions fall into one of four categories:
 
-* Those for reading individual tokens from standard input, one at a time, and converting each to a number, string, or boolean
+* Those for reading individual tokens from standard input, one at a time, and converting each to a number, string,
+  or boolean
 * Those for reading characters from standard input, one at a time
 * Those for reading lines from standard input, one at a time
 
@@ -318,7 +319,7 @@ class StdIn:
         :return: the next int in this input stream
         """
 
-        self.readDouble()
+        return self.readDouble()
 
     def readLong(self) -> int:
         """Reads the next token from this input stream, parses it as a int,
