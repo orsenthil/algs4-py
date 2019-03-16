@@ -12,5 +12,8 @@ This class provides methods for printing strings and numbers to standard output.
 
 class StdOut:
 
+    # force Unicode UTF-8 encoding; otherwise it's system dependent
+    CHARSET_NAME = "UTF-8"
+
     def __init__(self):
         pass
