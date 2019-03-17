@@ -17,3 +17,12 @@ class StdOut:
 
     def __init__(self):
         pass
+
+    @classmethod
+    def println(cls, x):
+        """Classmethod for println
+
+        :param x: any object
+        :return: prints the output on the console with newline.
+        """
+        print(x)
