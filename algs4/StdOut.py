@@ -26,3 +26,12 @@ class StdOut:
         :return: prints the output on the console with newline.
         """
         print(x)
+
+    @classmethod
+    def print(cls, x):
+        """Classmethod for print
+
+        :param x:  any object
+        :return: print the output on the console without newline.
+        """
+        print(x, end='')
