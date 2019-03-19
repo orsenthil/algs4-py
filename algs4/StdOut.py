@@ -28,10 +28,13 @@ class StdOut:
         print(x)
 
     @classmethod
-    def print(cls, x):
+    def print(cls, x=None):
         """Classmethod for print
 
         :param x:  any object
         :return: print the output on the console without newline.
         """
-        print(x, end='')
+        if x is None:
+            print("", end="", flush=True)
+        else:
+            print(x, end='')
