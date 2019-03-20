@@ -19,13 +19,16 @@ class StdOut:
         pass
 
     @classmethod
-    def println(cls, x):
+    def println(cls, x=None):
         """Classmethod for println
 
         :param x: any object
         :return: prints the output on the console with newline.
         """
-        print(x)
+        if x is None:
+            print("")
+        else:
+            print(x)
 
     @classmethod
     def print(cls, x=None):
@@ -37,4 +40,4 @@ class StdOut:
         if x is None:
             print("", end="", flush=True)
         else:
-            print(x, end='')
+            print(x, end='', flush=True)
