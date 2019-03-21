@@ -41,3 +41,12 @@ class StdOut:
             print("", end="", flush=True)
         else:
             print(x, end='', flush=True)
+
+    @classmethod
+    def close(cls):
+        """ Calling close() permanently disables standard output;
+            subsequent calls to StdOut.println() or System.out.println()
+            will no longer produce output on standard output.
+        :return:
+        """
+        print("", flush=True)
