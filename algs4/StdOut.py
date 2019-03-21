@@ -50,3 +50,12 @@ class StdOut:
         :return:
         """
         print("", flush=True)
+
+    def printf(self, format, s):
+        """Print the formatted string to stdout.
+
+        :param format: format for the string.
+        :param s: string to print
+        :return:
+        """
+        print(format % s, flush=True)
