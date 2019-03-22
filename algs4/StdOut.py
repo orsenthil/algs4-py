@@ -51,7 +51,8 @@ class StdOut:
         """
         print("", flush=True)
 
-    def printf(self, format, s):
+    @classmethod
+    def printf(cls, format, s):
         """Print the formatted string to stdout.
 
         :param format: format for the string.
@@ -59,3 +60,10 @@ class StdOut:
         :return:
         """
         print(format % s, flush=True)
+
+
+if __name__ == '__main__':
+    StdOut.print("Test")
+    StdOut.println(17)
+    StdOut.println(True)
+    StdOut.printf("%.6f\n", 1.0/7.0)
