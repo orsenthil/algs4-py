@@ -75,7 +75,6 @@ class StdOut:
             print(format % s, flush=True)
 
 
-
 if __name__ == '__main__':
     StdOut.print("Test")
     StdOut.println(17)
