@@ -7,7 +7,13 @@ This class provides methods for printing strings and numbers to standard output.
 * StdOut <em>flushes</em> standard output after each call to {@code print()} so that text
   will appear immediately in the terminal.
 
+For additional documentation,
+see <a href="https://introcs.cs.princeton.edu/15inout">Section 1.5</a> of
+<em>Computer Science: An Interdisciplinary Approach</em>
+by Robert Sedgewick and Kevin Wayne.
 """
+
+import locale
 
 
 class StdOut:
@@ -52,14 +58,22 @@ class StdOut:
         print("", flush=True)
 
     @classmethod
-    def printf(cls, format, s):
+    def printf(cls, format, s, _locale=None):
         """Print the formatted string to stdout.
 
         :param format: format for the string.
         :param s: string to print
+        :param locale: If locale is given, prints using the given locale.
         :return:
         """
-        print(format % s, flush=True)
+        if _locale is not None:
+            locale.setlocale(locale.LC_ALL, _locale)
+            formatted_s = locale.format_string(format, s)
+            print(formatted_s, flush=True)
+            locale.resetlocale()
+        else:
+            print(format % s, flush=True)
+
 
 
 if __name__ == '__main__':
