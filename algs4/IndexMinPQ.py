@@ -24,3 +24,9 @@ For additional documentation, see <a href="https://algs4.cs.princeton.edu/24pq">
 
 the generic type of key on this priority queue
 """
+
+
+class IndexMinPQ:
+
+    def __init__(self):
+        pass
