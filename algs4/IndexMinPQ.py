@@ -23,10 +23,18 @@ For additional documentation, see <a href="https://algs4.cs.princeton.edu/24pq">
 <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
 
 the generic type of key on this priority queue
+
+Reference
+
+* https://algs4.cs.princeton.edu/24pq/
 """
 
 
 class IndexMinPQ:
 
     def __init__(self):
-        pass
+        self.maxN = 0       # maximum number of elements on PQ.
+        self.n = 0          # number of elements on PQ.
+        self.pq = []        # binary heap using 1 based indexing
+        self.qp = []        # inverse of pq - qp[pq[i]] = pq[qp[i]] = i
+        self.keys = []      # keys[i] = priority of i
