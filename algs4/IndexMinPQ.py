@@ -30,10 +30,16 @@ Reference
 """
 
 
+class IllegalArgumentException(Exception):
+    pass
+
+
 class IndexMinPQ:
 
-    def __init__(self):
-        self.maxN = 0       # maximum number of elements on PQ.
+    def __init__(self, maxN):
+        if maxN < 0:
+            raise IllegalArgumentException()
+        self.maxN = maxN       # maximum number of elements on PQ.
         self.n = 0          # number of elements on PQ.
         self.pq = []        # binary heap using 1 based indexing
         self.qp = []        # inverse of pq - qp[pq[i]] = pq[qp[i]] = i
