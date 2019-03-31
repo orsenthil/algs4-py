@@ -47,3 +47,13 @@ class IndexMinPQ:
 
         for i in range(maxN):
             self.qp.append(-1)
+
+    def isEmpty(self):
+        """Return True if the PQ is Empty.
+
+        :return:  True if the PR is empty, False otherwise.
+        """
+        if self.n == 0:
+            return True
+
+        return False
