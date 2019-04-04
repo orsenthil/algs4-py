@@ -88,3 +88,15 @@ class IndexMinPQ:
             raise NoSuchElementException("Priority Queue Underflow")
 
         return self.pq[1]
+
+    # General Helper Functions
+
+    def greater(self, i, j):
+        return self.keys[self.pq[i]] > self.keys[self.pq[j]]
+
+    def exch(self, i, j):
+        swap = self.pq[i]
+        self.pq[i] = self.pq[j]
+        self.pq[j] = swap
+        self.qp[self.pq[i]] = i
+        self.qp[self.pq[j]] = j
