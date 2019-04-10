@@ -131,6 +131,20 @@ class IndexMinPQ:
         self.pq[self.n] = -1
         return min
 
+    def keyOf(self, i):
+        """ Returns the key associated with index {@code i}.
+
+        :param i: The index of the key to return.
+        :return:  The key associated with the index.
+        """
+        if i < 0 or i > self.maxN:
+            raise IllegalArgumentException("Illegal Argument given to KeyOf")
+
+        if not self.contains(i):
+            raise NoSuchElementException("index is not in the priority queue.")
+        else:
+            return self.keys[i]
+
 
     # General Helper Functions
 
