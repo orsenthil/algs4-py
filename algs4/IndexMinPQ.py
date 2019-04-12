@@ -162,6 +162,30 @@ class IndexMinPQ:
         self.swim(self.qp[i])
         self.sink(self.qp[i])
 
+    def decreaseKey(self, i, key):
+        """Decrease the key associated with index {@code i} to the specified value.
+
+        :param i: The index of the key to decrease.
+        :param key:  decrease the key associated with the index (i) to this key.
+
+        * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+        * @throws IllegalArgumentException if {@code key >= keyOf(i)}
+        * @throws NoSuchElementException no key is associated with index {@code i}
+
+        :return:
+        """
+        if i < 0 or i >= self.maxN:
+            raise IllegalArgumentException()
+        if self.contains(i):
+            raise NoSuchElementException("index is not in the priority queue.")
+
+        if (self.keys[i] < key):
+            raise IllegalArgumentException("Calling decreaseKey() with given argument would not strictly decrease the key")
+
+        self.keys[i] = key
+        self.swim(self.qp[i])
+
+
 
     # General Helper Functions
 
