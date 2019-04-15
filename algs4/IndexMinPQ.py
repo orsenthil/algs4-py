@@ -260,3 +260,7 @@ class IndexMinPQ:
                 break
             self.exch(k, j)
             k = j
+
+
+if __name__ == '__main__':
+    strings = ["it", "was", "the", "best", "of", "times", "it", "was", "the", "worst"]
