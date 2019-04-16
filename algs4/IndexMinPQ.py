@@ -52,6 +52,8 @@ class IndexMinPQ:
         for i in range(maxN):
             self.qp.append(-1)
 
+        self.copy = None
+
     def isEmpty(self):
         """Return True if the PQ is Empty.
 
@@ -260,6 +262,16 @@ class IndexMinPQ:
                 break
             self.exch(k, j)
             k = j
+
+    def hasNext(self):
+        assert isinstance(self.copy, IndexMinPQ)
+        return not self.copy.isEmpty()
+
+    def __iter__(self):
+        pass
+
+    def __next__(self):
+        pass
 
 
 if __name__ == '__main__':
