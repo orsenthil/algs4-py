@@ -38,6 +38,10 @@ class NoSuchElementException(Exception):
     pass
 
 
+class UnsupportedOperationException(Exception):
+    pass
+
+
 class IndexMinPQ:
 
     def __init__(self, maxN):
@@ -266,6 +270,9 @@ class IndexMinPQ:
     def hasNext(self):
         assert isinstance(self.copy, IndexMinPQ)
         return not self.copy.isEmpty()
+
+    def remove(self):
+        raise UnsupportedOperationException()
 
     def __iter__(self):
         pass
