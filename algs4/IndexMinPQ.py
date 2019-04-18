@@ -278,7 +278,9 @@ class IndexMinPQ:
         pass
 
     def __next__(self):
-        pass
+        if not self.hasNext():
+            raise NoSuchElementException()
+        return self.copy.delMin()
 
 
 if __name__ == '__main__':
