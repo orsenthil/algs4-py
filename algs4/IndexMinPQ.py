@@ -302,3 +302,8 @@ if __name__ == '__main__':
     # print each key using the iterator
     for i in pq:
         print(i, strings[i])
+
+    # empty the queue.
+
+    while not pq.isEmpty():
+        pq.delMin()
