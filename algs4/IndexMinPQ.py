@@ -284,3 +284,8 @@ class IndexMinPQ:
 
 if __name__ == '__main__':
     strings = ["it", "was", "the", "best", "of", "times", "it", "was", "the", "worst"]
+
+    pq = IndexMinPQ(len(strings))
+
+    for idx in range(len(strings)):
+        pq.insert(idx, strings[idx])
