@@ -289,3 +289,9 @@ if __name__ == '__main__':
 
     for idx in range(len(strings)):
         pq.insert(idx, strings[idx])
+
+    while not pq.isEmpty():
+        i = pq.delMin()
+        print(i, strings[i])
+    print()
+
