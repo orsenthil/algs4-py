@@ -295,3 +295,6 @@ if __name__ == '__main__':
         print(i, strings[i])
     print()
 
+    # reinsert the same strings.
+    for idx in range(len(strings)):
+        pq.insert(idx, strings[idx])
