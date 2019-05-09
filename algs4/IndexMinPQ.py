@@ -89,6 +89,7 @@ class IndexMinPQ:
 
         :param i:  i is an index.
         :param key:  Key to associate with the index.
+        :return: None
         """
         if i < 0 or i >= self.maxN:
             raise IllegalArgumentException("Invalid Values.")
@@ -157,7 +158,7 @@ class IndexMinPQ:
 
         :param i: The index of the key to change.
         :param key: the key associated with the index i to this key.
-        :return:
+        :return: None
         """
         if i < 0 or i >= self.maxN:
             raise IllegalArgumentException()
@@ -179,7 +180,7 @@ class IndexMinPQ:
         * @throws IllegalArgumentException if {@code key >= keyOf(i)}
         * @throws NoSuchElementException no key is associated with index {@code i}
 
-        :return:
+        :return: None
         """
         if i < 0 or i >= self.maxN:
             raise IllegalArgumentException()
@@ -200,7 +201,7 @@ class IndexMinPQ:
         * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
         * @throws IllegalArgumentException if {@code key <= keyOf(i)}
         * @throws NoSuchElementException no key is associated with index {@code i}
-        :return:
+        :return: None
         """
         if i < 0 or i >= self.maxN:
             raise IllegalArgumentException()
@@ -221,7 +222,7 @@ class IndexMinPQ:
 
         * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
         * @throws NoSuchElementException no key is associated with index {@code i}
-        :return:
+        :return: None
         """
         if i < 0 or i >= self.maxN:
             raise IllegalArgumentException()
