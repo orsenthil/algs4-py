@@ -198,9 +198,11 @@ class IndexMinPQ:
 
         :param i: The index of the key to increase.
         :param key: Increase the key associated with the index to this key.
+
         * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
         * @throws IllegalArgumentException if {@code key <= keyOf(i)}
         * @throws NoSuchElementException no key is associated with index {@code i}
+
         :return: None
         """
         if i < 0 or i >= self.maxN:
