@@ -73,6 +73,7 @@ class IndexMinPQ:
         """ Is {@code i} an index on this priority queue?
 
         :param i: i an idex.
+
         :return: @return {@code true} if {@code i} is an index on this priority queue; {@code false} otherwise
         """
         return self.qp[i] != -1
@@ -89,6 +90,7 @@ class IndexMinPQ:
 
         :param i:  i is an index.
         :param key:  Key to associate with the index.
+
         :return: None
         """
         if i < 0 or i >= self.maxN:
@@ -143,6 +145,7 @@ class IndexMinPQ:
         """ Returns the key associated with index {@code i}.
 
         :param i: The index of the key to return.
+
         :return:  The key associated with the index.
         """
         if i < 0 or i > self.maxN:
@@ -158,6 +161,7 @@ class IndexMinPQ:
 
         :param i: The index of the key to change.
         :param key: the key associated with the index i to this key.
+
         :return: None
         """
         if i < 0 or i >= self.maxN:
