@@ -22,3 +22,9 @@ The <em>is-empty</em>, <em>size</em>, <em>max-index</em>, <em>max-key</em>,
 <em>contains</em>, and <em>key-of</em> operations take constant time.
 Construction takes time proportional to the specified capacity.
 """
+
+
+class IndexMaxPQ:
+
+    def __init__(self, maxN):
+        pass
