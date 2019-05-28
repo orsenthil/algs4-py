@@ -24,7 +24,12 @@ Construction takes time proportional to the specified capacity.
 """
 
 
+class IllegalArgumentException(Exception):
+    pass
+
+
 class IndexMaxPQ:
 
     def __init__(self, maxN):
-        pass
+        if maxN < 0:
+            raise IllegalArgumentException()
