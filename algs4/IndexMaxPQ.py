@@ -35,8 +35,12 @@ class NoSuchElementException(Exception):
 class UnsupportedOperationException(Exception):
     pass
 
+
 class IndexMaxPQ:
 
     def __init__(self, maxN):
         if maxN < 0:
             raise IllegalArgumentException()
+
+        self.maxN = maxN    # maximum number of elements in the priority queue.
+        self.n = 0          # number of elements in the priority Queue.
