@@ -44,3 +44,6 @@ class IndexMaxPQ:
 
         self.maxN = maxN    # maximum number of elements in the priority queue.
         self.n = 0          # number of elements in the priority Queue.
+        self.pq = []            # binary heap using 1 based indexing
+        self.qp = []            # inverse of pq - qp[pq[i]] = pq[qp[i]] = i
+        self.keys = []          # keys[i] = priority of i
