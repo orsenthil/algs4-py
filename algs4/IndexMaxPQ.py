@@ -47,3 +47,8 @@ class IndexMaxPQ:
         self.pq = []            # binary heap using 1 based indexing
         self.qp = []            # inverse of pq - qp[pq[i]] = pq[qp[i]] = i
         self.keys = []          # keys[i] = priority of i
+
+        for i in range(maxN):
+            self.qp.append(-1)
+
+        self.copy = None
