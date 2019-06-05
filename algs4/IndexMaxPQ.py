@@ -63,3 +63,11 @@ class IndexMaxPQ:
 
         return False
 
+    def contains(self, i):
+        """ Is {@code i} an index on this priority queue?
+
+        :param i: i an idex.
+
+        :return: @return {@code true} if {@code i} is an index on this priority queue; {@code false} otherwise
+        """
+        return self.qp[i] != -1
