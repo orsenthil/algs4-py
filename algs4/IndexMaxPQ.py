@@ -71,3 +71,10 @@ class IndexMaxPQ:
         :return: @return {@code true} if {@code i} is an index on this priority queue; {@code false} otherwise
         """
         return self.qp[i] != -1
+
+    def size(self):
+        """ Returns the number of keys on this priority queue.
+
+        :return: The number of keys on this priority queue.
+        """
+        return self.n
