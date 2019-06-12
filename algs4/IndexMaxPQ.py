@@ -173,3 +173,28 @@ class IndexMaxPQ:
 
         self.keys[i] = key
         self.swim(self.qp[i])
+
+    def increaseKey(self, i, key):
+        """ Increase the key associated with index {@code i} to the specified value.
+
+        :param i: The index of the key to increase.
+        :param key: Increase the key associated with the index to this key.
+
+        * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+        * @throws IllegalArgumentException if {@code key <= keyOf(i)}
+        * @throws NoSuchElementException no key is associated with index {@code i}
+
+        :return: None
+        """
+        if i < 0 or i >= self.maxN:
+            raise IllegalArgumentException()
+
+        if not self.contains(i):
+            raise NoSuchElementException("index is not in the priority queue.")
+
+        if self.keys[i] > key:
+            raise IllegalArgumentException("Calling increaseKey() with given argument would not strictly increase the key")
+
+        self.keys[i] = key
+        self.sink(self.qp[i])
+
