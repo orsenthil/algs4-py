@@ -198,3 +198,27 @@ class IndexMaxPQ:
         self.keys[i] = key
         self.sink(self.qp[i])
 
+    def delete(self, i):
+        """ Remove the key associated with index {@code i}.
+
+        :param i:  The index of the key to remove.
+
+        * @throws IllegalArgumentException unless {@code 0 <= i < maxN}
+        * @throws NoSuchElementException no key is associated with index {@code i}
+        :return: None
+        """
+        if i < 0 or i >= self.maxN:
+            raise IllegalArgumentException()
+
+        if not self.contains(i):
+            raise NoSuchElementException("index is not in the priority queue.")
+
+        index = self.qp[i]
+
+        self.exch(index, self.n)
+        self.n -=1
+        self.swim(index)
+        self.sink(index)
+        self.keys[i] = None
+        self.qp[i] = -1
+
