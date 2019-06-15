@@ -222,3 +222,7 @@ class IndexMaxPQ:
         self.keys[i] = None
         self.qp[i] = -1
 
+    # General Helper Functions
+
+    def greater(self, i, j):
+        return self.keys[self.pq[i]] > self.keys[self.pq[j]]
