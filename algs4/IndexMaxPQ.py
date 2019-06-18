@@ -251,3 +251,11 @@ class IndexMaxPQ:
             self.exch(k, j)
             k = j
 
+    def hasNext(self):
+        assert isinstance(self.copy, IndexMaxPQ)
+        return not self.copy.isEmpty()
+
+    def remove(self):
+        raise UnsupportedOperationException()
+
+
