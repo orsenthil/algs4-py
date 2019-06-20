@@ -265,3 +265,14 @@ class IndexMaxPQ:
         if not self.hasNext():
             raise NoSuchElementException()
 
+
+# unit tests for the MaxPQ data type
+
+if __name__ == '__main__':
+    strings = ["it", "was", "the", "best", "of", "times", "it", "was", "the", "worst"]
+
+    pq = IndexMaxPQ(len(strings))
+
+    for idx in range(len(strings)):
+        pq.insert(idx, strings[idx])
+
