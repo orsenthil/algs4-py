@@ -118,6 +118,23 @@ class IndexMaxPQ:
             raise NoSuchElementException("Priority Queue Underflow")
         return self.keys[self.pq[1]]
 
+    def delMax(self):
+        """Removes a minimum key and returns its associated index.
+
+        :return: an index associated with a minimum key
+        """
+        if self.n == 0:
+            raise NoSuchElementException("Priority Queue Underflow")
+
+        min = self.pq[1]
+        self.exch(1, self.n - 1)
+        self.sink(1)
+        self.qp[min] = -1
+        self.keys[min] = None
+        self.pq[self.n] = -1
+        return min
+
+
     def keyOf(self, i):
         """ Returns the key associated with index {@code i}.
 
