@@ -298,3 +298,15 @@ if __name__ == '__main__':
         print(i, strings[i])
     print()
 
+    # reinsert the same strings.
+    for idx in range(len(strings)):
+        pq.insert(idx, strings[idx])
+
+    # print each key using the iterator
+    for i in pq:
+        print(i, strings[i])
+
+    # empty the queue.
+
+    while not pq.isEmpty():
+        pq.delMax()
