@@ -118,6 +118,15 @@ class IndexMaxPQ:
             raise NoSuchElementException("Priority Queue Underflow")
         return self.keys[self.pq[1]]
 
+    def maxKey(self):
+        """Returns a maximum key.
+
+        :return: a maximum key
+        """
+        if self.n == 0:
+            raise NoSuchElementException("Priority Queue Underflow")
+        return self.keys[self.pq[1]]
+
     def delMax(self):
         """Removes a minimum key and returns its associated index.
 
