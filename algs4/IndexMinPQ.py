@@ -48,7 +48,7 @@ class IndexMinPQ:
     def __init__(self, maxN):
         if maxN < 0:
             raise IllegalArgumentException()
-        self.maxN = maxN        # maximum number of elements on PQ.
+        self.minN = maxN        # maximum number of elements on PQ.
         self.n = 0              # number of elements on PQ.
         self.pq = []            # binary heap using 1 based indexing
         self.qp = []            # inverse of pq - qp[pq[i]] = pq[qp[i]] = i
@@ -93,7 +93,7 @@ class IndexMinPQ:
 
         :return: None
         """
-        if i < 0 or i >= self.maxN:
+        if i < 0 or i >= self.minN:
             raise IllegalArgumentException("Invalid Values.")
         if self.contains(i):
             raise IllegalArgumentException("index is already in priority queue.")
@@ -148,7 +148,7 @@ class IndexMinPQ:
 
         :return:  The key associated with the index.
         """
-        if i < 0 or i > self.maxN:
+        if i < 0 or i > self.minN:
             raise IllegalArgumentException("Illegal Argument given to KeyOf")
 
         if not self.contains(i):
@@ -164,7 +164,7 @@ class IndexMinPQ:
 
         :return: None
         """
-        if i < 0 or i >= self.maxN:
+        if i < 0 or i >= self.minN:
             raise IllegalArgumentException()
 
         if not self.contains(i):
@@ -186,7 +186,7 @@ class IndexMinPQ:
 
         :return: None
         """
-        if i < 0 or i >= self.maxN:
+        if i < 0 or i >= self.minN:
             raise IllegalArgumentException()
         if self.contains(i):
             raise NoSuchElementException("index is not in the priority queue.")
@@ -209,7 +209,7 @@ class IndexMinPQ:
 
         :return: None
         """
-        if i < 0 or i >= self.maxN:
+        if i < 0 or i >= self.minN:
             raise IllegalArgumentException()
 
         if not self.contains(i):
@@ -230,7 +230,7 @@ class IndexMinPQ:
         * @throws NoSuchElementException no key is associated with index {@code i}
         :return: None
         """
-        if i < 0 or i >= self.maxN:
+        if i < 0 or i >= self.minN:
             raise IllegalArgumentException()
 
         if not self.contains(i):
