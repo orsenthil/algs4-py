@@ -24,3 +24,12 @@ class IndexMultiwayMinPQ:
 
         self.copy = None
 
+    def isEmpty(self):
+        """Return True if the PQ is Empty.
+
+        :return:  True if the PR is empty, False otherwise.
+        """
+        if self.n == 0:
+            return True
+
+        return False
