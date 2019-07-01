@@ -53,6 +53,24 @@ class IndexMultiwayMinPQ:
         """
         return self.n
 
+    def insert(self, i, key):
+        """ Associates key with index {@code i}.
+
+        :param i:  i is an index.
+        :param key:  Key to associate with the index.
+
+        :return: None
+        """
+        if i < 0 or i >= self.minN:
+            raise IllegalArgumentException("Invalid Values.")
+        if self.contains(i):
+            raise IllegalArgumentException("index is already in priority queue.")
+        self.n += 1
+        self.qp[i] = self.n
+        self.pq[self.n] = i
+        self.keys[i] = key
+        self.swim(self.n)
+
     # General Helper Functions
 
     def greater(self, i, j):
