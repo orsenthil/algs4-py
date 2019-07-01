@@ -7,6 +7,9 @@ class IllegalArgumentException(Exception):
     pass
 
 
+class NoSuchElementException(Exception):
+    pass
+
 class IndexMultiwayMinPQ:
 
     def __init__(self, maxN):
