@@ -10,6 +10,7 @@ class IllegalArgumentException(Exception):
 class NoSuchElementException(Exception):
     pass
 
+
 class IndexMultiwayMinPQ:
 
     def __init__(self, maxN):
@@ -52,3 +53,21 @@ class IndexMultiwayMinPQ:
         """
         return self.n
 
+    # General Helper Functions
+
+    def greater(self, i, j):
+        return self.keys[self.pq[i]] > self.keys[self.pq[j]]
+
+    def exch(self, i, j):
+        swap = self.pq[i]
+        self.pq[i] = self.pq[j]
+        self.pq[j] = swap
+        self.qp[self.pq[i]] = i
+        self.qp[self.pq[j]] = j
+
+    # Heap Helper Functions
+
+    def swim(self, k):
+        while k > 1 and self.greater(k // 2, k):
+            self.exch(k, k//2)
+            k = k //2
