@@ -71,6 +71,19 @@ class IndexMultiwayMinPQ:
         self.keys[i] = key
         self.swim(self.n)
 
+    def maxIndex(self):
+        """Returns an index associated with a maximum key.
+
+        :return: an index associated with a maximum key.
+        throws NoSuchElementException if this priority queue is empty.
+
+        """
+        if self.n == 0:
+            raise NoSuchElementException("Priority Queue Underflow")
+
+        return self.pq[1]
+
+
     # General Helper Functions
 
     def greater(self, i, j):
