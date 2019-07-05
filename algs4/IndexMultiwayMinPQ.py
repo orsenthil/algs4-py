@@ -83,6 +83,14 @@ class IndexMultiwayMinPQ:
 
         return self.pq[1]
 
+    def minKey(self):
+        """Returns a minimum key.
+
+        :return: a minimum key
+        """
+        if self.n == 0:
+            raise NoSuchElementException("Priority Queue Underflow")
+        return self.keys[self.pq[1]]
 
     # General Helper Functions
 
