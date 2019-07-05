@@ -126,3 +126,13 @@ class IndexMultiwayMinPQ:
         while k > 1 and self.greater(k // 2, k):
             self.exch(k, k//2)
             k = k //2
+
+    def sink(self, k):
+        while (2 * k <= self.n):
+            j = 2 * k
+            if j < self.n and self.greater(j, j + 1):
+                j = j + 1
+            if not self.greater(k, j):
+                break
+            self.exch(k, j)
+            k = j
