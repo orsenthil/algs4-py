@@ -136,3 +136,7 @@ class IndexMultiwayMinPQ:
                 break
             self.exch(k, j)
             k = j
+
+    def hasNext(self):
+        assert isinstance(self.copy, IndexMultiwayMinPQ)
+        return not self.copy.isEmpty()
