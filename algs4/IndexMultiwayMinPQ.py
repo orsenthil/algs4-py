@@ -11,6 +11,10 @@ class NoSuchElementException(Exception):
     pass
 
 
+class UnsupportedOperationException(Exception):
+    pass
+
+
 class IndexMultiwayMinPQ:
 
     def __init__(self, maxN):
