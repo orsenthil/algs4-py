@@ -148,3 +148,9 @@ class IndexMultiwayMinPQ:
     def remove(self):
         raise UnsupportedOperationException()
 
+    def __iter__(self):
+        yield self.copy.delMin()
+
+    def __next__(self):
+        if not self.hasNext():
+            raise NoSuchElementException()
