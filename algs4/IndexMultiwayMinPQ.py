@@ -127,6 +127,24 @@ class IndexMultiwayMinPQ:
         else:
             return self.keys[i]
 
+    def changeKey(self, i, key):
+        """Change the key associated with index {@code i} to the specified value.
+
+        :param i: The index of the key to change.
+        :param key: the key associated with the index i to this key.
+
+        :return: None
+        """
+        if i < 0 or i >= self.minN:
+            raise IllegalArgumentException()
+
+        if not self.contains(i):
+            raise NoSuchElementException("Index is not in the priority queue.")
+
+        self.keys[i] = key
+        self.swim(self.qp[i])
+        self.sink(self.qp[i])
+
     # General Helper Functions
 
     def greater(self, i, j):
