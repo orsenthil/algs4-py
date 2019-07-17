@@ -258,3 +258,12 @@ class IndexMultiwayMinPQ:
     def __next__(self):
         if not self.hasNext():
             raise NoSuchElementException()
+
+
+if __name__ == '__main__':
+    strings = ["it", "was", "the", "best", "of", "times", "it", "was", "the", "worst"]
+
+    pq = IndexMultiwayMinPQ(len(strings))
+
+    for idx in range(len(strings)):
+        pq.insert(idx, strings[idx])
