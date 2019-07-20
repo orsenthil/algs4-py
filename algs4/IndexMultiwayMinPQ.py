@@ -276,3 +276,7 @@ if __name__ == '__main__':
     # reinsert the same strings.
     for idx in range(len(strings)):
         pq.insert(idx, strings[idx])
+
+    # print each key using the iterator
+    for i in pq:
+        print(i, strings[i])
