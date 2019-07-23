@@ -7,7 +7,7 @@ It supports the usual insert and delete-the-minimum operations,
 along with delete and change-the-key methods.
 
 In order to let the client refer to keys on the priority queue,
-an integer between 0 and N-1 is associated with each key ; the client
+an integer between 0 and N-1 is associated with each key, the client
 uses this integer to specify which key to delete or change.
 
 It also supports methods for peeking at the minimum key,
@@ -16,19 +16,19 @@ the keys.
 
 This implementation uses a multiway heap along with an array to associate
 keys with integers in the given range.
+
 For simplified notations, logarithm in base d will be referred as log-d
 The delete-the-minimum, delete, change-key and increase-key operations
 take time proportional to d*log-d(n)
 
-The insert and decrease-key take time proportional to log-d(n)
+The insert and decrease-key take time proportional to log-d(n).
+
 The is-empty, min-index, min-key, size, contains and key-of operations take constant time.
 Construction takes time proportional to the specified capacity.
 
-The arrays used in this structure have the first d indices empty,
-it apparently helps with caching effects.
+The arrays used in this structure have the first d indices empty, it apparently helps with caching effects.
 
 Credits: algs4 (java version) author Tristan Claverie
-
 """
 
 
