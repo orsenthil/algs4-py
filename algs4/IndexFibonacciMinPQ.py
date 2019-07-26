@@ -22,7 +22,15 @@
 
 """
 
+
+class IllegalArgumentException(Exception):
+    pass
+
+
 class IndexFibonacciMinPQ:
 
-    def __init__(self):
-        pass
+    def __init__(self, N):
+        if N < 0:
+            raise IllegalArgumentException()
+
+        self.n = N
