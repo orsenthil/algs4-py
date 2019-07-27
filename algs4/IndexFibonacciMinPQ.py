@@ -27,6 +27,11 @@ class IllegalArgumentException(Exception):
     pass
 
 
+class Node:
+    def __init__(self):
+        self.node = None
+
+
 class IndexFibonacciMinPQ:
 
     def __init__(self, N):
@@ -34,3 +39,4 @@ class IndexFibonacciMinPQ:
             raise IllegalArgumentException()
 
         self.n = N
+        self.nodes = []
