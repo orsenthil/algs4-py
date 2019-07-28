@@ -30,6 +30,14 @@ class IllegalArgumentException(Exception):
 class Node:
     def __init__(self):
         self.node = None
+        self.key = None
+        self.order = None
+        self.index = None
+        self.prev = None
+        self.next = None
+        self.parent = None
+        self.child = None
+        self.mark = None
 
 
 class IndexFibonacciMinPQ:
