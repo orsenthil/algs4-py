@@ -56,3 +56,9 @@ class IndexFibonacciMinPQ:
 
     def isEmpty(self):
         return self.size() == 0
+
+    def contains(self, i):
+        if i < 0 or i > self.n:
+            raise IllegalArgumentException()
+
+        return self.nodes[i] is not None
