@@ -52,9 +52,20 @@ class IndexFibonacciMinPQ:
         self._size = 0
 
     def size(self):
+        """Number of elements currently on the priority queue.
+
+        Worst case is O(1)
+        :return: The number of elements on the priority queue.
+        """
         return self._size
 
     def isEmpty(self):
+        """Whether the priority queue is empty.
+
+        Worst case is O(1).
+
+        :return: Return if the queue size is 0.
+        """
         return self.size() == 0
 
     def contains(self, i):
