@@ -69,6 +69,11 @@ class IndexFibonacciMinPQ:
         return self.size() == 0
 
     def contains(self, i):
+        """ Returns True if the element i is in the Queue, False otherwise.
+
+        :param i:  Element to test.
+        :return: True if the element is present in the Priority Queue, False otherwise.
+        """
         if i < 0 or i > self.n:
             raise IllegalArgumentException()
 
