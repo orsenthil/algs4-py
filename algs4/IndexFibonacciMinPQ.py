@@ -50,6 +50,7 @@ class IndexFibonacciMinPQ:
         self.n = N
         self.nodes = []
         self._size = 0
+        self.head = None
 
     def size(self):
         """Number of elements currently on the priority queue.
@@ -78,3 +79,50 @@ class IndexFibonacciMinPQ:
             raise IllegalArgumentException()
 
         return self.nodes[i] is not None
+
+    def insert(self, i, key):
+        """ Associates key with index {@code i}.
+
+        :param i:  i is an index.
+        :param key:  Key to associate with the index.
+
+        :return: None
+        """
+        if i < 0 or i >= self.n:
+            raise IllegalArgumentException("Invalid Values.")
+        if self.contains(i):
+            raise IllegalArgumentException("index is already in priority queue.")
+
+        x = Node()
+        x.key = key
+        x.index = i
+        self.nodes[i] = x
+        self._size += 1
+
+        head = self.insertNode(x, self.head)
+
+        if self.min == None:
+            self.min = head
+        else:
+            if self.greater(self.min.key, key):
+                self.min = head
+
+
+
+
+    """
+    //Inserts a Node in a circular list containing head, returns a new head
+    private Node<Key> insertNode(Node<Key> x, Node<Key> head) {
+        if (head == null) {
+            x.prev = x;
+        x.next = x;
+        } else {
+            head.prev.next = x;
+        x.next = head;
+        x.prev = head.prev;
+        head.prev = x;
+        }
+        return x;
+        }
+    """
+
