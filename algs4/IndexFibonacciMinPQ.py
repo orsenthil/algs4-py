@@ -80,6 +80,15 @@ class IndexFibonacciMinPQ:
 
         return self.nodes[i] is not None
 
+    def greater(self, n, m):
+        if n == None:
+            return False
+        if m == None:
+            return True
+
+        return n > m
+
+
     def insert(self, i, key):
         """ Associates key with index {@code i}.
 
@@ -106,7 +115,6 @@ class IndexFibonacciMinPQ:
         else:
             if self.greater(self.min.key, key):
                 self.min = head
-
 
 
 
