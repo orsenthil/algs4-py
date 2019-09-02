@@ -117,10 +117,8 @@ class IndexFibonacciMinPQ:
                 self.min = head
 
 
-
-    """
-    //Inserts a Node in a circular list containing head, returns a new head
-    private Node<Key> insertNode(Node<Key> x, Node<Key> head) {
+    def insertNode(self, x, head):
+        """{
         if (head == null) {
             x.prev = x;
         x.next = x;
