@@ -118,17 +118,14 @@ class IndexFibonacciMinPQ:
 
 
     def insertNode(self, x, head):
-        """{
-        if (head == null) {
-            x.prev = x;
-        x.next = x;
-        } else {
-            head.prev.next = x;
-        x.next = head;
-        x.prev = head.prev;
-        head.prev = x;
-        }
-        return x;
-        }
-    """
+        if head is None:
+            x.prev = x
+            x.next = x
+        else:
+            head.prev.next = x
+            x.next = head
+            x.prev = head.prev
+            head.prev = x
+
+        return x
 
