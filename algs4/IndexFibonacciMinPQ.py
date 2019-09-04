@@ -81,9 +81,9 @@ class IndexFibonacciMinPQ:
         return self.nodes[i] is not None
 
     def greater(self, n, m):
-        if n == None:
+        if n is None:
             return False
-        if m == None:
+        if m is None:
             return True
 
         return n > m
@@ -115,7 +115,6 @@ class IndexFibonacciMinPQ:
         else:
             if self.greater(self.min.key, key):
                 self.min = head
-
 
     def insertNode(self, x, head):
         if head is None:
