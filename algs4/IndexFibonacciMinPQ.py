@@ -128,3 +128,8 @@ class IndexFibonacciMinPQ:
 
         return x
 
+    def cut(self, x, head):
+        pass
+
+    def meld(self, x, y):
+        pass
