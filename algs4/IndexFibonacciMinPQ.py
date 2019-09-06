@@ -1,5 +1,4 @@
 """
-
 The IndexFibonacciMinPQ class represents an indexed priority queue of generic keys.
 
 It supports the usual insert and delete-the-minimum operations,
@@ -88,7 +87,6 @@ class IndexFibonacciMinPQ:
 
         return n > m
 
-
     def insert(self, i, key):
         """ Associates key with index {@code i}.
 
@@ -110,7 +108,7 @@ class IndexFibonacciMinPQ:
 
         head = self.insertNode(x, self.head)
 
-        if self.min == None:
+        if self.min is None:
             self.min = head
         else:
             if self.greater(self.min.key, key):
