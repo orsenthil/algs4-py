@@ -127,7 +127,20 @@ class IndexFibonacciMinPQ:
         return x
 
     def cut(self, x, head):
-        pass
+        if x.head == x:
+            x.next = None
+            x.prev = None
+            return None
+        else:
+            x.next.prev = x.prev
+            x.prev.next = x.next
+            res = x.next
+            x.next = None
+            x.prev = None
+            if head == x:
+                return res
+            else:
+                return head
 
     def meld(self, x, y):
         pass
