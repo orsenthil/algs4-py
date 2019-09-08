@@ -143,4 +143,12 @@ class IndexFibonacciMinPQ:
                 return head
 
     def meld(self, x, y):
-        pass
+        if x is None:
+            return y
+        if y is None:
+            return x;
+        x.prev.next = y.next
+        y.next.prev =  x.prev
+        x.prev = y
+        y.next = x
+        return x
