@@ -152,3 +152,12 @@ class IndexFibonacciMinPQ:
         x.prev = y
         y.next = x
         return x
+
+    def __iter__(self):
+        pass
+
+    def __next__(self):
+        pass
+
+    def __del__(self):
+        pass
