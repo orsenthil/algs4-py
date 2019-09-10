@@ -146,15 +146,15 @@ class IndexFibonacciMinPQ:
         if x is None:
             return y
         if y is None:
-            return x;
+            return x
         x.prev.next = y.next
-        y.next.prev =  x.prev
+        y.next.prev = x.prev
         x.prev = y
         y.next = x
         return x
 
     def __iter__(self):
-        pass
+        yield self
 
     def __next__(self):
         pass
