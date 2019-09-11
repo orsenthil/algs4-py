@@ -40,6 +40,10 @@ class Node:
         self.mark = None
 
 
+class UnsupportedOperationException(Exception):
+    pass
+
+
 class IndexFibonacciMinPQ:
 
     def __init__(self, N):
@@ -160,4 +164,4 @@ class IndexFibonacciMinPQ:
         pass
 
     def __del__(self):
-        pass
+        raise UnsupportedOperationException
