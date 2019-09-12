@@ -22,6 +22,8 @@ Construction takes time proportional to the specified capacity
 @author Tristan Claverie
 """
 
+import copy
+
 
 class IllegalArgumentException(Exception):
     pass
@@ -54,6 +56,7 @@ class IndexFibonacciMinPQ:
         self.nodes = []
         self._size = 0
         self.head = None
+        self.copyitem = None
 
     def size(self):
         """Number of elements currently on the priority queue.
@@ -157,8 +160,12 @@ class IndexFibonacciMinPQ:
         y.next = x
         return x
 
+    def hasNext(self):
+        return not self.copyitem.isEmpty()
+
     def __iter__(self):
-        yield self
+        self.copyitem = copy.deepcopy(self)
+        yield self.copyitem
 
     def __next__(self):
         pass
