@@ -161,6 +161,7 @@ class IndexFibonacciMinPQ:
         return x
 
     def hasNext(self):
+        assert isinstance(self.copyitem, IndexFibonacciMinPQ)
         return not self.copyitem.isEmpty()
 
     def __iter__(self):
