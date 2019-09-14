@@ -169,6 +169,8 @@ class IndexFibonacciMinPQ:
         yield self.copyitem
 
     def __next__(self):
+        if self.isEmpty():
+            raise UnsupportedOperationException
         pass
 
     def __del__(self):
