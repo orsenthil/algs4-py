@@ -94,6 +94,9 @@ class IndexFibonacciMinPQ:
 
         return n > m
 
+    def delMin(self):
+        pass
+
     def insert(self, i, key):
         """ Associates key with index {@code i}.
 
@@ -169,8 +172,9 @@ class IndexFibonacciMinPQ:
         yield self.copyitem
 
     def __next__(self):
-        if self.isEmpty():
+        if self.copyitem.isEmpty():
             raise UnsupportedOperationException
+        self.copyitem.delMin()
         pass
 
     def __del__(self):
