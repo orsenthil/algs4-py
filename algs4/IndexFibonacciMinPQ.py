@@ -46,6 +46,10 @@ class UnsupportedOperationException(Exception):
     pass
 
 
+class NoSuchElementException(Exception):
+    pass
+
+
 class IndexFibonacciMinPQ:
 
     def __init__(self, N):
@@ -95,7 +99,8 @@ class IndexFibonacciMinPQ:
         return n > m
 
     def delMin(self):
-        pass
+        if self.n == 0:
+            raise NoSuchElementException("Priority Queue Underflow")
 
     def insert(self, i, key):
         """ Associates key with index {@code i}.
