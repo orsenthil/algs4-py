@@ -102,6 +102,8 @@ class IndexFibonacciMinPQ:
         if self.n == 0:
             raise NoSuchElementException("Priority Queue Underflow")
 
+        head = self.cut(self.min, self.head)
+
     def insert(self, i, key):
         """ Associates key with index {@code i}.
 
