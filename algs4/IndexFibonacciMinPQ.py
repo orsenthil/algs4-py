@@ -61,6 +61,7 @@ class IndexFibonacciMinPQ:
         self._size = 0
         self.head = None
         self.copyitem = None
+        self.min = None
 
     def size(self):
         """Number of elements currently on the priority queue.
@@ -98,11 +99,16 @@ class IndexFibonacciMinPQ:
 
         return n > m
 
+    def cut(self, min, head):
+        pass
+    
     def delMin(self):
         if self.n == 0:
             raise NoSuchElementException("Priority Queue Underflow")
-
+        
         head = self.cut(self.min, self.head)
+        x = self.min.child
+        
 
     def insert(self, i, key):
         """ Associates key with index {@code i}.
