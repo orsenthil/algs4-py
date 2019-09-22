@@ -101,15 +101,34 @@ class IndexFibonacciMinPQ:
 
     def cut(self, min, head):
         pass
-    
+
     def delMin(self):
         if self.n == 0:
             raise NoSuchElementException("Priority Queue Underflow")
         
         head = self.cut(self.min, self.head)
         x = self.min.child
-        
+        index = self.min.index
+        self.min.key = None
+        if x is not None:
+            x.parent = None
+            x = x.next
 
+            while x != self.min.child:
+                x.parent = None
+                x = x.next
+
+            head = self.meld(head, x)
+
+        self._size -= 1
+        if (self.isEmpty()):
+            self.consolidate()
+        else:
+            min = None
+        self.nodes[index] = None
+        return index
+
+        
     def insert(self, i, key):
         """ Associates key with index {@code i}.
 
@@ -192,3 +211,6 @@ class IndexFibonacciMinPQ:
 
     def __del__(self):
         raise UnsupportedOperationException
+
+    def consolidate(self):
+        pass
