@@ -99,9 +99,6 @@ class IndexFibonacciMinPQ:
 
         return n > m
 
-    def cut(self, min, head):
-        pass
-
     def delMin(self):
         if self.n == 0:
             raise NoSuchElementException("Priority Queue Underflow")
@@ -124,7 +121,7 @@ class IndexFibonacciMinPQ:
         if (self.isEmpty()):
             self.consolidate()
         else:
-            min = None
+            self.min = None
         self.nodes[index] = None
         return index
 
