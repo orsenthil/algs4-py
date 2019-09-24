@@ -125,6 +125,15 @@ class IndexFibonacciMinPQ:
         self.nodes[index] = None
         return index
 
+
+    def keyOf(self, i):
+        if  i < 0 or i >= self.n:
+            raise IllegalArgumentException
+
+        if not self.contains(i):
+            raise NoSuchElementException("Specified index is not in the Queue.")
+
+        return self.nodes[i].key
         
     def insert(self, i, key):
         """ Associates key with index {@code i}.
