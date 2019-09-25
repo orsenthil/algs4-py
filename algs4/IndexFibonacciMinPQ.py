@@ -125,9 +125,8 @@ class IndexFibonacciMinPQ:
         self.nodes[index] = None
         return index
 
-
     def keyOf(self, i):
-        if  i < 0 or i >= self.n:
+        if i < 0 or i >= self.n:
             raise IllegalArgumentException
 
         if not self.contains(i):
