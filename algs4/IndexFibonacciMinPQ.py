@@ -133,7 +133,44 @@ class IndexFibonacciMinPQ:
             raise NoSuchElementException("Specified index is not in the Queue.")
 
         return self.nodes[i].key
-        
+
+    def changeKey(self, i, key):
+        """
+
+
+        	/**
+	 * Changes the key associated with index i to the given key
+	 * If the given key is greater, Worst case is O(log(n))
+	 * If the given key is lower, Worst case is O(1) (amortized)
+	 * @param i an index
+	 * @param key the key to associate with i
+	 * @throws java.lang.IllegalArgumentException if the specified index is invalid
+	 * @throws java.util.NoSuchElementException if the index has no key associated with
+	 */
+
+	public void changeKey(int i, Key key) {
+		if (i < 0 || i >= n) 		throw new IllegalArgumentException();
+		if (!contains(i))			throw new NoSuchElementException("Specified index is not in the queue");
+		if (greater(key, nodes[i].key))  increaseKey(i, key);
+		else 							 decreaseKey(i, key);
+	}
+
+
+
+        :return:
+        """
+        if i < 0 or i >= self.n:
+            raise IllegalArgumentException()
+
+        if (not self.contains(i)):
+            raise NoSuchElementException("Specified index is not in the queue.")
+
+        if (self.greater(key, self.nodes[i].key)):
+            self.increaseKey(i, key)
+        else:
+            self.decreaseKey(i, key)
+
+
     def insert(self, i, key):
         """ Associates key with index {@code i}.
 
