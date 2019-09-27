@@ -232,3 +232,9 @@ class IndexFibonacciMinPQ:
 
     def consolidate(self):
         pass
+
+    def increaseKey(self, i, key):
+        pass
+
+    def decreaseKey(self, i, key):
+        pass
