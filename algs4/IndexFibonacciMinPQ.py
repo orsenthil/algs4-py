@@ -234,7 +234,22 @@ class IndexFibonacciMinPQ:
         pass
 
     def increaseKey(self, i, key):
-        pass
+        """Insert the key at i.
+
+        :param i: location in the PQ.
+        :param key:  Key value
+        """
+        if i < 0 or i >= self.n:
+            raise IllegalArgumentException
+        
+        if not self.contains(i):
+            raise NoSuchElementException("Specified index is not in the queue.")
+        
+        if (self.greater(self.nodes[i].key, key)):
+            raise IllegalArgumentException("Calling with this argument would not increase the key.")
+        
+        self.delete(i)
+        self.insert(i, key)
 
     def decreaseKey(self, i, key):
         pass
