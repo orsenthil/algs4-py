@@ -253,3 +253,6 @@ class IndexFibonacciMinPQ:
 
     def decreaseKey(self, i, key):
         pass
+
+    def delete(self, i):
+        pass
