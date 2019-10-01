@@ -186,7 +186,7 @@ class IndexFibonacciMinPQ:
 
         return x
 
-    def cut(self, x, head):
+    def cut(self, x, head=None):
         if x.head == x:
             x.next = None
             x.prev = None
@@ -245,14 +245,34 @@ class IndexFibonacciMinPQ:
         if not self.contains(i):
             raise NoSuchElementException("Specified index is not in the queue.")
         
-        if (self.greater(self.nodes[i].key, key)):
+        if self.greater(self.nodes[i].key, key):
             raise IllegalArgumentException("Calling with this argument would not increase the key.")
         
         self.delete(i)
         self.insert(i, key)
 
     def decreaseKey(self, i, key):
-        pass
+        """Delete the key at i.
+
+        :param i: location in the PQ.
+        :param key:  Key value
+        """
+        if i < 0 or i >= self.n:
+            raise IllegalArgumentException
+
+        if not self.contains(i):
+            raise NoSuchElementException("Specified index is not in the queue.")
+
+        if self.greater(self.nodes[i].key, key):
+            raise IllegalArgumentException("Calling with this argument would not increase the key.")
+
+        x = self.nodes[i]
+
+        if self.greater(self.min.key, key):
+            self.min = x
+
+        if x.parent != None and self.greater(x.parent.key, key):
+            self.cut(i)
 
     def delete(self, i):
         pass
