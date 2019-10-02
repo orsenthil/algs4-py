@@ -275,4 +275,46 @@ class IndexFibonacciMinPQ:
             self.cut(i)
 
     def delete(self, i):
+        """Delete an Element from the Queue.
+
+        :param i: The element to delete.
+        """
+        if i < 0 or i >= self.n:
+            raise IllegalArgumentException()
+
+        if not self.contains(i):
+            raise NoSuchElementException("Specified Index is not in the queue.")
+
+        x = self.nodes[i]
+        x.key = None
+
+        if x.parent is not None:
+            self.cut(i)
+
+        if x.child != None:
+            child = x.child
+            x.child = None
+            x = child
+
+            child.parent = None
+            child = child.next
+
+            while child != x:
+                child.parent = None
+                child = child.next
+
+            head = self.meld(self.head, child)
+
+        if not self.isEmpty():
+            self.consolidate()
+        else:
+            min = None
+
+        self.nodes[i]= None
+        self.size -= 1
+
+
+
+
+
         pass
