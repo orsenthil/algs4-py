@@ -291,7 +291,7 @@ class IndexFibonacciMinPQ:
         if x.parent is not None:
             self.cut(i)
 
-        if x.child != None:
+        if x.child is not None:
             child = x.child
             x.child = None
             x = child
