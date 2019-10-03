@@ -303,18 +303,13 @@ class IndexFibonacciMinPQ:
                 child.parent = None
                 child = child.next
 
-            head = self.meld(self.head, child)
+            self.head = self.meld(self.head, child)
 
         if not self.isEmpty():
             self.consolidate()
         else:
-            min = None
+            self.min = None
 
         self.nodes[i]= None
         self.size -= 1
 
-
-
-
-
-        pass
