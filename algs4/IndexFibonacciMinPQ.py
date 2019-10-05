@@ -231,6 +231,11 @@ class IndexFibonacciMinPQ:
         raise UnsupportedOperationException
 
     def consolidate(self):
+        """Coalesces the roots, thus reshapes the heap.
+        Caching a HashMap improves greatly performances
+
+        :return:
+        """
         pass
 
     def increaseKey(self, i, key):
