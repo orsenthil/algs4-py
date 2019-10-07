@@ -266,8 +266,58 @@ class IndexFibonacciMinPQ:
 		}
 	}
         """
-        pass
         self.table.clear()
+        x = self.head
+        maxOrder = 0
+        min = self.head
+        y = None
+        z = None
+        y = x
+        x = x.next
+        z = self.table.get(y.order)
+
+        while z is not None:
+            self.table.remove(y.order)
+            if (self.greater(y.key, z.key)):
+                self.link(y, z)
+                y = z
+            else:
+                self.link(z, y)
+
+            z = self.table.get(y.order)
+
+        self.table.put(y.order, y)
+
+        if y.order > maxOrder:
+            maxOrder = y.order
+
+        while x != self.head:
+            y = x
+            x = x.next
+            z = self.table.get(y.order)
+
+            while z is not None:
+                self.table.remove(y.order)
+                if (self.greater(y.key, z.key)):
+                    self.link(y, z)
+                    y = z
+                else:
+                    self.link(z, y)
+
+                z = self.table.get(y.order)
+
+            self.table.put(y.order, y)
+
+            if y.order > maxOrder:
+                maxOrder = y.order
+
+        self.head = None
+        for n in self.table.values():
+            if n:
+                min = self.greater(min.key, n.key)
+
+            head = self.insert(n, self.head)
+
 
     def increaseKey(self, i, key):
         """Insert the key at i.
