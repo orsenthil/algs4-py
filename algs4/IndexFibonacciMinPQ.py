@@ -62,7 +62,7 @@ class IndexFibonacciMinPQ:
         self.head = None
         self.copyitem = None
         self.min = None
-        self.table = {}
+        self.table = dict()
 
     def size(self):
         """Number of elements currently on the priority queue.
@@ -277,7 +277,7 @@ class IndexFibonacciMinPQ:
         z = self.table.get(y.order)
 
         while z is not None:
-            self.table.remove(y.order)
+            del self.table[y.order]
             if (self.greater(y.key, z.key)):
                 self.link(y, z)
                 y = z
