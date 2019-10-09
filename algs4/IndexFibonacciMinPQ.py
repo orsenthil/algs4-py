@@ -399,3 +399,6 @@ class IndexFibonacciMinPQ:
         self.nodes[i]= None
         self.size -= 1
 
+    def link(self, y, z):
+        pass
+
