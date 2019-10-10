@@ -297,8 +297,8 @@ class IndexFibonacciMinPQ:
             z = self.table.get(y.order)
 
             while z is not None:
-                self.table.remove(y.order)
-                if (self.greater(y.key, z.key)):
+                del self.table[y.order]
+                if self.greater(y.key, z.key):
                     self.link(y, z)
                     y = z
                 else:
@@ -306,7 +306,7 @@ class IndexFibonacciMinPQ:
 
                 z = self.table.get(y.order)
 
-            self.table.put(y.order, y)
+            self.table[y.order] = y
 
             if y.order > maxOrder:
                 maxOrder = y.order
