@@ -257,7 +257,7 @@ class IndexFibonacciMinPQ:
 
             z = self.table.get(y.order)
 
-        self.table.put(y.order, y)
+        self.table[y.order] = y
 
         if y.order > maxOrder:
             maxOrder = y.order
