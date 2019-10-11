@@ -236,35 +236,6 @@ class IndexFibonacciMinPQ:
         Caching a HashMap improves greatly performances
 
         :return:
-
-        		table.clear();
-		Node<Key> x = head;
-		int maxOrder = 0;
-		min = head;
-		Node<Key> y = null, z = null;
-		do {
-			y = x;
-			x = x.next;
-			z = table.get(y.order);
-			while (z != null) {
-				table.remove(y.order);
-				if (greater(y.key, z.key)) {
-					link(y, z);
-					y = z;
-				} else {
-					link(z, y);
-				}
-				z = table.get(y.order);
-			}
-			table.put(y.order, y);
-			if (y.order > maxOrder) maxOrder = y.order;
-		} while (x != head);
-		head = null;
-		for (Node<Key> n : table.values()) {
-			min = greater(min.key, n.key) ? n : min;
-			head = insert(n, head);
-		}
-	}
         """
         self.table.clear()
         x = self.head
