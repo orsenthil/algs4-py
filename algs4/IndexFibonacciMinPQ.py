@@ -119,7 +119,8 @@ class IndexFibonacciMinPQ:
             head = self.meld(head, x)
 
         self._size -= 1
-        if (self.isEmpty()):
+
+        if self.isEmpty():
             self.consolidate()
         else:
             self.min = None
@@ -146,7 +147,6 @@ class IndexFibonacciMinPQ:
             self.increaseKey(i, key)
         else:
             self.decreaseKey(i, key)
-
 
     def insert(self, i, key):
         """ Associates key with index {@code i}.
@@ -286,8 +286,7 @@ class IndexFibonacciMinPQ:
         for n in self.table.values():
             if n:
                 min = self.greater(min.key, n.key)
-
-            head = self.insert(n, self.head)
+            self.head = self.insert(n, self.head)
 
 
     def increaseKey(self, i, key):
