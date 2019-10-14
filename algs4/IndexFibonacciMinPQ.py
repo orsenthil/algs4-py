@@ -288,7 +288,6 @@ class IndexFibonacciMinPQ:
                 min = self.greater(min.key, n.key)
             self.head = self.insert(n, self.head)
 
-
     def increaseKey(self, i, key):
         """Insert the key at i.
 
@@ -369,6 +368,8 @@ class IndexFibonacciMinPQ:
         self.nodes[i]= None
         self.size -= 1
 
-    def link(self, y, z):
-        pass
+    def link(self, root1, root2):
+        root1.parent = root2
+        root2.child = self.insert(root1, root2.child)
+        root2.order += 1
 
