@@ -93,6 +93,7 @@ class IndexFibonacciMinPQ:
         return self.nodes[i] is not None
 
     def greater(self, n, m):
+        """Return the greater between n and m."""
         if n is None:
             return False
         if m is None:
@@ -326,7 +327,7 @@ class IndexFibonacciMinPQ:
         if self.greater(self.min.key, key):
             self.min = x
 
-        if x.parent != None and self.greater(x.parent.key, key):
+        if x.parent is not None and self.greater(x.parent.key, key):
             self.cut(i)
 
     def delete(self, i):
