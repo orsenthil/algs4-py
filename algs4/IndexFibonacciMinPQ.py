@@ -236,21 +236,18 @@ class IndexFibonacciMinPQ:
         """Coalesces the roots, thus reshapes the heap.
         Caching a HashMap improves greatly performances
 
-        :return:
         """
         self.table.clear()
         x = self.head
         maxOrder = 0
         min = self.head
-        y = None
-        z = None
         y = x
         x = x.next
         z = self.table.get(y.order)
 
         while z is not None:
             del self.table[y.order]
-            if (self.greater(y.key, z.key)):
+            if self.greater(y.key, z.key):
                 self.link(y, z)
                 y = z
             else:
