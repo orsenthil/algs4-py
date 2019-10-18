@@ -23,6 +23,15 @@
 """
 
 
+class Node:
+    def __init__(self):
+        pass
+
+
+class Key:
+    def __init__(self):
+        pass
+
 class IndexBinomialMinPQ:
     def __init__(self):
         pass
