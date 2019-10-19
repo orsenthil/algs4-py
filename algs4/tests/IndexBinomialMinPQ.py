@@ -32,6 +32,12 @@ class Key:
     def __init__(self):
         pass
 
+
 class IndexBinomialMinPQ:
     def __init__(self):
-        pass
+        self.key = None
+        self.order = None
+        self.index = None
+        self.parent = None
+        self.child = None
+        self.sibling = None
