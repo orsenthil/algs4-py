@@ -47,3 +47,8 @@ class IndexBinomialMinPQ:
         self.parent = None
         self.child = None
         self.sibling = None
+        self.head = None
+
+    def isEmpty(self):
+        if self.head is None:
+            return True
