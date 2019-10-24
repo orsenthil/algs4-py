@@ -50,5 +50,9 @@ class IndexBinomialMinPQ:
         self.head = None
 
     def isEmpty(self):
+        """Whether the priority queue is empty. Worst case is O(1).
+
+        :return: True if the priority queue is empty, False otherwise.
+        """
         if self.head is None:
             return True
