@@ -48,6 +48,7 @@ class IndexBinomialMinPQ:
         self.child = None
         self.sibling = None
         self.head = None
+        self.nodes = [None] * self.n
 
     def isEmpty(self):
         """Whether the priority queue is empty. Worst case is O(1).
@@ -56,3 +57,10 @@ class IndexBinomialMinPQ:
         """
         if self.head is None:
             return True
+
+    def contains(self, i):
+        if i < 0 or i > self.n:
+            raise IllegalArgumentException()
+
+        else:
+            return self.nodes[i] is not None
