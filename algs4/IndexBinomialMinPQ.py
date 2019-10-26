@@ -59,6 +59,10 @@ class IndexBinomialMinPQ:
             return True
 
     def contains(self, i):
+        """ Check whether i is in the priority Queue.
+
+        :return: true if i is present. raises Illegal Argument Exception if the i is out of bounds.
+        """
         if i < 0 or i > self.n:
             raise IllegalArgumentException()
 
