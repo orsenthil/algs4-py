@@ -36,6 +36,10 @@ class Key:
         pass
 
 
+class ArithmeticException(Exception):
+    pass
+
+
 class IndexBinomialMinPQ:
     def __init__(self, N):
         if N < 0:
@@ -68,3 +72,21 @@ class IndexBinomialMinPQ:
 
         else:
             return self.nodes[i] is not None
+
+    def size(self):
+        """Number of elements currently on the priority queue.
+
+        Worst case is O(log(n))
+
+        :return: The number of elements on the priority queue.
+        """
+        result = 0
+        node = self.head
+        while node != None:
+            if node.order > 30:
+                raise ArithmeticException("The number of elements cannnot be evaluated, but the priority queue is still valid.")
+
+            tmp = 1 << node.order
+            result |= tmp
+        return result
+
