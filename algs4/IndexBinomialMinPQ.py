@@ -22,6 +22,11 @@
 
 """
 
+
+class ArithmeticException(Exception):
+    pass
+
+
 class IllegalArgumentException(Exception):
     pass
 
@@ -34,10 +39,6 @@ class Node:
 class Key:
     def __init__(self):
         pass
-
-
-class ArithmeticException(Exception):
-    pass
 
 
 class IndexBinomialMinPQ:
@@ -82,7 +83,7 @@ class IndexBinomialMinPQ:
         """
         result = 0
         node = self.head
-        while node != None:
+        while node is not None:
             if node.order > 30:
                 raise ArithmeticException("The number of elements cannnot be evaluated, but the priority queue is still valid.")
 
