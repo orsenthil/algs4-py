@@ -88,6 +88,6 @@ class IndexBinomialMinPQ:
                 raise ArithmeticException("The number of elements cannnot be evaluated, but the priority queue is still valid.")
 
             tmp = 1 << node.order
-            result |= tmp
+            result = result | tmp
         return result
 
