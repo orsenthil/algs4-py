@@ -88,3 +88,15 @@ class IndexBinomialMinPQ:
             result = result | tmp
         return result
 
+    def insert(self):
+        """
+         Associates a key with an index
+         Worst case is O(log(n))
+         @param i an index
+         @param key a Key associated with i
+         @throws IllegalArgumentException if the specified index is invalid
+         @throws IllegalArgumentException if the index is already in the queue
+        """
+
+        pass
+
