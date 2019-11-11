@@ -100,6 +100,22 @@ class IndexBinomialMinPQ:
 
         if i < 0:
             raise IllegalArgumentException("index cannot be less than zero.")
+        if i < 0 or i >= self.n:
+            raise IllegalArgumentException("Invalid Values.")
+        if self.contains(i):
+            raise IllegalArgumentException("index is already in priority queue.")
 
-        pass
+        x = Node()
+        x.key = key
+        x.index = i
+        self.nodes[i] = x
+        self._size += 1
+
+        head = self.insertNode(x, self.head)
+
+        if self.min is None:
+            self.min = head
+        else:
+            if self.greater(self.min.key, key):
+                self.min = head
 
