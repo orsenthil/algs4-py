@@ -40,6 +40,7 @@ class Key:
 
 class IndexBinomialMinPQ:
     def __init__(self, N):
+
         if N < 0:
             raise IllegalArgumentException("Cannot create a priority queue of negative size.")
         self.n = N
@@ -51,6 +52,7 @@ class IndexBinomialMinPQ:
         self.sibling = None
         self.head = None
         self.nodes = [None] * self.n
+        self._size = 0
 
     def isEmpty(self):
         """Whether the priority queue is empty. Worst case is O(1).
