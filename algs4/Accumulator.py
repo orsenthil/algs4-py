@@ -4,7 +4,7 @@ of a stream of real numbers. It provides an example of a mutable data type and a
 algorithm.
 
 This implementation uses a one-pass algorithm that is less susceptible
-to floating-point roundoff error than the more straightforward
+to floating-point round-off error than the more straightforward
 
 implementation based on saving the sum of the squares of the numbers.
 
