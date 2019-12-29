@@ -267,8 +267,7 @@ class StdIn:
             raise NoSuchElementException
 
     def readInt(self) -> int:
-        """Reads the next token from this input stream, parses it as a int,
-        and returns the int.
+        """Reads the next token from this input stream, parses it as a int, and returns the int.
 
         @throws NoSuchElementException if the input stream is empty
         @throws InputMismatchException if the next token cannot be parsed as an int
