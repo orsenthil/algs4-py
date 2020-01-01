@@ -1,24 +1,17 @@
 """
-<i>Input</i>. This class provides methods for reading strings
-and numbers from standard input, file input, URLs, and sockets.
-<p>
-The Locale used is: language = English, country = US. This is consistent
-with the formatting conventions with Java floating-point literals,
-command-line arguments (via {@link Double#parseDouble(String)})
-and standard output.
-<p>
-For additional documentation, see
-<a href="https://introcs.cs.princeton.edu/31datatype">Section 3.1</a> of
-<i>Computer Science: An Interdisciplinary Approach</i>
-by Robert Sedgewick and Kevin Wayne.
-<p>
-Like {@link Scanner}, reading a token also consumes preceding Java
-whitespace, reading a full line consumes
-the following end-of-line delimeter, while reading a character consumes
-nothing extra.
-<p>
-Whitespace is defined in {@link Character#isWhitespace(char)}. Newlines
-consist of \n, \r, \r\n, and Unicode hex code points 0x2028, 0x2029, 0x0085;
+Input. This class provides methods for reading strings and numbers from standard input, file input, URLs, and sockets.
+
+The Locale used is: language = English, country = US. This is consistent with the formatting conventions with Java
+floating-point literals, command-line arguments (via {@link Double#parseDouble(String)}) and standard output.
+
+For additional documentation, see <a href="https://introcs.cs.princeton.edu/31datatype">Section 3.1</a> of
+<i>Computer Science: An Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
+
+Like {@link Scanner}, reading a token also consumes preceding Java whitespace, reading a full line consumes
+the following end-of-line delimeter, while reading a character consumes nothing extra.
+
+Whitespace is defined in {@link Character#isWhitespace(char)}. Newlines consist of \n, \r, \r\n, and Unicode hex code
+points 0x2028, 0x2029, 0x0085;
 """
 import re
 import locale
